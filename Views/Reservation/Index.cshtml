@@ -1,0 +1,302 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/facilities.css">
+    <link rel="stylesheet" href="~/Content/commondesign.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="css/book.css"> -->
+    <link rel="stylesheet" href="~/Content/jquery-ui.css">
+    <link rel="stylesheet" href="~/Content/check.css">
+
+    <title>Checkout Rooms</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top">
+                <div class="container-fluid">
+                    <div class="text-center">
+                        <img src="~/Content/images/commonimages/Logo.png" width="40px" alt="">
+                        <p id="subheading">Resort & Spa</p>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvasNavbar"
+                         aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Reservation</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                <li class="nav-item">
+                                    <a class="nav-link navtext" target="_blank" href="@Url.Action("Index","Home")"> <i class="fa fa-home"></i> Home</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link navtext" href="@Url.Action("Index","Login")"><i class="fa fa-sign-in"></i> Login</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div id="carouselExampleFade" class="carousel slide carousel-fade topcarousel" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="~/Content/images/Rooms & Suites/OceanSideVilla/banner_villa.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Content/images/Rooms & Suites/FamilyVilla/banner_famvilla.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Content/images/Rooms & Suites/DeluxeSuite/banner_dsuite.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Content/images/Rooms & Suites/PremiumSuite/banner_prsuite.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Content/images/Rooms & Suites/OceanSideRoom/banner_room.png" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div class="main-content">
+            <div class="content-date">
+                <div class="container">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-8" style="background-color: black; opacity: 0.7; padding-top: 1em;">
+                            <div class="container">
+                                <form action="">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="txt">Check In</label>
+                                                <div class="input-container">
+                                                    <div class="input-group">
+                                                        <input type="text" autocomplete="off" name="checkout" value="" placeholder="MM/DD/YYYY" class="form-control frmdd datepicker" required>
+                                                        <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="txt">Check Out</label>
+                                                <div class="input-container">
+                                                    <div class="input-group">
+                                                        <input type="text" autocomplete="off" name="checkout" value="" placeholder="MM/DD/YYYY" class="form-control frmdd datepicker" required>
+                                                        <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row chck">
+                                        <div class="col-lg-12">
+                                            <button class="btn btn-success" style="float: right;">Check Availability</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rooms">
+                <div class="container">
+                    <div class="row individual-room">
+                        <div class="col-md-12">
+                            <div class="room-info">
+                                <div class="card">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <img src="~/Content/images/Rooms & Suites/OceanSideVilla/Villa.png" class="card-img-top" alt="...">
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Ocean Side Villa</h5>
+                                                <p class="card-text">Closest to the beach, the 150sqm Ocean Front Pool Villas are the epitome of luxury and elegance. A spacious living room leads on to the private pool. Down pillows, Irish linen and the world’s best bed ensure a good night’s sleep.</p>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="txt">Available:</td>
+                                                        <td class="txt">5</td>
+                                                    </tr>
+                                                </tbody>
+                                                <div class="card-footer">
+                                                    <a href="@Url.Action("Book","Reservation")"><button class="btn btn-secondary" style="float: right;">Book Room</button></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row individual-room">
+                        <div class="col-md-12">
+                            <div class="room-info">
+                                <div class="card">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <img src="~/Content/images/Rooms & Suites/FamilyVilla/Villa2.jpg" class="card-img-top" alt="...">
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Family Villa</h5>
+                                                <p class="card-text">The Family Villas are luxurious 267sqm holiday homes for families or small groups. These two-story, three bedroom villas feature a living room, kitchenette, four bathrooms, two balconies with panoramic garden views. There’s also a terrace with BBQ grill and a large private pool. </p>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="txt">Available:</td>
+                                                        <td class="txt">5</td>
+                                                    </tr>
+                                                </tbody>
+                                                <div class="card-footer">
+                                                    <a href="@Url.Action("Book", "Reservation")"><button class="btn btn-secondary" style="float: right;">Book Room</button></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row individual-room">
+                        <div class="col-md-12">
+                            <div class="room-info">
+                                <div class="card">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <img src="~/Content/images/Rooms & Suites/DeluxeSuite/Suite1.jpg" class="card-img-top" alt="...">
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Deluxe Suite</h5>
+                                                <p class="card-text">The 79 sqm Deluxe Suite comes with a private balcony and offers a magnificent vista across the bay while reflecting the resort’s signature design. A spacious stone-lined en suite bathroom with sunken bathtub and a rain-shower adds to the luxury experience.</p>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="txt">Available:</td>
+                                                        <td class="txt">5</td>
+                                                    </tr>
+                                                </tbody>
+                                                <div class="card-footer">
+                                                    <a href="@Url.Action("Book", "Reservation")"><button class="btn btn-secondary" style="float: right;">Book Room</button></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row individual-room">
+                        <div class="col-md-12">
+                            <div class="room-info">
+                                <div class="card">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <img src="~/Content/images/Rooms & Suites/PremiumSuite/Suite2.jpg" class="card-img-top" alt="...">
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Premium Suite</h5>
+                                                <p class="card-text">The Premium Suite is the epitome of luxury and elegance. Featuring a spacious bedroom, large living and dressing areas, an en suite stone-lined bathroom with bathtub and rain shower, plus a private balcony with views over the sea to the horizon. These 128sqm suites are the ideal choice for the discerning traveler.</p>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="txt">Available:</td>
+                                                        <td class="txt">5</td>
+                                                    </tr>
+                                                </tbody>
+                                                <div class="card-footer">
+                                                    <a href="@Url.Action("Book", "Reservation")"><button class="btn btn-secondary" style="float: right;">Book Room</button></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row individual-room">
+                        <div class="col-md-12">
+                            <div class="room-info">
+                                <div class="card">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <img src="~/Content/images/Rooms & Suites/OceanSideRoom/Room1.jpg" class="card-img-top" alt="...">
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Ocean Side Room</h5>
+                                                <p class="card-text">Being located closest to the Resort’s private beach, the Ocean Side Rooms offer panoramic vistas of the Ocean. You will find yourself observing the sunrise in the early morning while having breakfast served on the private veranda. As part of The GrandBlue's concept, the rooms reflect the signature design of old world charm and elegance complemented with premium luxury standards.</p>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="txt">Available:</td>
+                                                        <td class="txt">5</td>
+                                                    </tr>
+                                                </tbody>
+                                                <div class="card-footer">
+                                                    <a href="@Url.Action("Book", "Reservation")"><button class="btn btn-secondary" style="float: right;">Book Room</button></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p id="cpyrttext">
+                © Copyright 2021 GrandBlue Resort & Spa. | All Rights Reserved | Powered by ATS
+            </p>
+        </div>
+    </div>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+
+    <script src="~/Scripts/jquery-1.12.4.js"></script>
+    <script src="~/Scripts/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( ".datepicker" ).datepicker();
+        } );
+    </script>
+</body>
+

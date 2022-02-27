@@ -1,0 +1,27 @@
+.allsmallroompics{
+    padding-top: 25px;
+}
+.roompics{
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+.smallimg{
+    transition: 500ms all ease-in-out;
+}
+.smallimg:hover{
+    transform: scale(1.05);
+}
+#roomdetails{
+    font-family: 'Philosopher', sans-serif;
+    font-size: 300%;
+    color: #006ba1;
+    padding-top: 25px;
+    padding-bottom: 10px;
+}
+.roominfo{
+    font-family: 'Montserrat';
+    letter-spacing: 0.1em;
+}
+.roominfo li{
+    padding-bottom: 0.5em;
+}

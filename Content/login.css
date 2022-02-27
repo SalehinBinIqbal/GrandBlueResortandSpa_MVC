@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');/*Montserrat*/
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');/*Tangerine*/
+@import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');/*Philosopher*/
+
+
+body{
+    background-image: url("https://i.ibb.co/C5j6W5v/the-anam-f-RVHzhu-Sk-Gc-unsplash.jpg");
+    background-attachment: fixed;
+}
+
+.blk{
+    margin-top: 15%;
+    margin-bottom: 15%;
+}
+.card-title{
+    font-family: 'Philosopher', sans-serif;
+    font-size: 250%;
+    text-align: center;
+}
+.txt{
+    font-family: 'Montserrat';
+}
+.footer{
+    background: #006ba1;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 5%;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+#cpyrttext{
+    color: white;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 0px;
+}

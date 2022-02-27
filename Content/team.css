@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');/*Philosopher*/
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');/*Tangerine*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');/*Montserrat*/
+body{
+    background: #eee;
+    background-image: url("https://images.squarespace-cdn.com/content/5c9e66e1d7819e21e09450be/1563554293246-0SPHBTNXDKYBXUU1O4SZ/bg_pattern.png?content-type=image%2Fpng");
+    background-attachment: fixed;
+}
+.team{
+    margin-top: 1%;
+}
+.logo{
+    width: 112.5px;
+}
+#grandtext{
+    display: inline;
+    font-family: 'Philosopher', sans-serif;
+    color: #00bfd5;
+    font-size: 55px;
+    text-decoration: none;
+}
+#bluetext{
+    display: inline;
+    font-family: 'Philosopher', sans-serif;
+    color: #006ba1;
+    font-size: 55px;
+    text-decoration: none;
+}
+#resorttext{
+    transform: translateY(-25px);
+}
+#subtext{
+    font-family: 'Tangerine', cursive;
+    color: black;
+    font-size: 35px;
+    text-decoration: none;
+}
+.content{
+    margin-bottom: 70px;
+}
+.headingtext{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+    font-family: 'Philosopher', sans-serif;
+    color: #006ba1;
+}
+.dp{
+    box-shadow: 0px 0px 40px 5px rgba(0,0,0,0.6);
+    border-radius: 5%;
+}
+.descriptionbox{
+    margin-top: 10%;
+    margin-bottom: 7%;
+}
+.description{
+    font-family: 'Montserrat';
+    text-align: center;
+    padding-bottom: 2%;
+}
+.footer{
+    background: #006ba1;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 5%;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+#cpyrttext{
+    color: white;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 0px;
+}

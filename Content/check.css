@@ -1,0 +1,25 @@
+body {
+    background-image: url("https://images.squarespace-cdn.com/content/5c9e66e1d7819e21e09450be/1563554293246-0SPHBTNXDKYBXUU1O4SZ/bg_pattern.png?content-type=image%2Fpng");
+    background-attachment: fixed;
+}
+.content-date{
+    padding-top: 5em;
+}
+.txt{
+    font-family: 'Philosopher', sans-serif;
+    font-size: 1.25em;
+    color: white;
+}
+input::-webkit-calendar-picker-indicator {
+    opacity: 100;
+}
+.chck{
+    padding-top: 1em;
+}
+.rooms{
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
+.individual-room{
+    padding-top: 2em;
+}

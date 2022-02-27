@@ -1,0 +1,283 @@
+﻿
+@{
+    ViewBag.Title = "Rooms";
+}
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade topcarousel" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="~/Content/images/Rooms & Suites/banner/banner1.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="~/Content/images/Rooms & Suites/banner/banner2.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="~/Content/images/Rooms & Suites/banner/banner3.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="~/Content/images/Rooms & Suites/banner/banner4.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="~/Content/images/Rooms & Suites/banner/banner5.png" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<div class="text-center">
+    <a href="@Url.Action("Index","Home")">
+        <img class="logo" src="~/Content/images/commonimages/Logo.png" alt="...">
+    </a>
+    <div class="logotext">
+        <a id="grandtext" href="@Url.Action("Index","Home")">Grand</a>
+        <a id="bluetext" href="@Url.Action("Index","Home")">Blue</a>
+        <div id="resorttext">
+            <p><a id="subtext" href="@Url.Action("Index","Home")">Resort & Spa</a></p>
+        </div>
+    </div>
+</div>
+
+<div class="commonblock">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="blocktext2">
+                    Discover Rooms & Suites
+                </h2>
+                <div class="text-center">
+                    <img id="welcomebar" src="~/Content/images/commonimages/line.png" alt="">
+                </div>
+                <p class="blocksubtext">
+                    A combination of design, space and a peaceful faraway outlook of sea, garden or swimming pool, There are 100 rooms of 05 categories consisting of villas, rooms and suites. The high speed Wi-Fi facilities in each of our guest rooms and in the Lobby area allow you to keep in touch with home and your office.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="maincontent">
+    <h2 class="blocktext1">At a Glance</h2>
+    <div class="text-center">
+        <img id="contentbar" src="~/Content/images/commonimages/line_1.png" alt="">
+    </div>
+    <div class="allglance">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 blockimgodd child1">
+                    <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        </div>
+                        <div class="carousel-inner carboxodd">
+                            <div class="carousel-item active">
+                                <img src="~/Content/images/Rooms & Suites/OceanSideVilla/Villa.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/images/Rooms & Suites/OceanSideVilla/Villa1_4.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4 blockdescription">
+                    <div class="blockodd child1">
+                        <div class="blockbody">
+                            <h2 class="blocktitle">Ocean Side Villa</h2>
+                            <p class="blocktext">
+                                Wake up and step out onto your terrace with panoramic views of the golden beach and jewel-like sea beyond. Better yet, enjoy your morning coffee and delicious fresh breakfast in the comfort of your own sanctuary.
+                            </p>
+                            <p class="blocktext">
+                                With its private pool and blissful location next to the beach, our Ocean Side Villas will leave you torn between relaxing in your private oasis and stepping out onto 300 metres of golden sand, just a stone’s throw away.
+                            </p>
+                            <a href="@Url.Action("OceanSideVilla","Home")"><button type="button" class="btn btn-outline-primary discover">Read More</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="allglance">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-md-4 blockdescription">
+                    <div class="blockeven child1">
+                        <div class="blockbody">
+                            <h2 class="blocktitle">Family Villa</h2>
+                            <p class="blocktext">
+                                Large families looking for space and privacy will delight in the two-storey Family Hill Villa. Featuring three beautiful bedrooms, a living room, kitchenette, four bathrooms, two balconies with breath-taking sea views and a terrace with BBQ grill and large private pool, it is sure to become a true home away from home.
+                            </p>
+                            <a href="@Url.Action("FamilyVilla","Home")"><button type="button" class="btn btn-outline-primary discover">Read More</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 blockimgeven child1">
+                    <div id="carouselExampleIndicators1" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        </div>
+                        <div class="carousel-inner carboxeven">
+                            <div class="carousel-item active">
+                                <img src="~/Content/images/Rooms & Suites/FamilyVilla/Villa2.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/images/Rooms & Suites/FamilyVilla/Villa2_2.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="allglance">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 blockimgodd child2">
+                    <div id="carouselExampleIndicators2" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        </div>
+                        <div class="carousel-inner carboxodd">
+                            <div class="carousel-item active">
+                                <img src="~/Content/images/Rooms & Suites/DeluxeSuite/Suite1.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4 blockdescription">
+                    <div class="blockodd child2">
+                        <div class="blockbody">
+                            <h2 class="blocktitle">Deluxe Suite</h2>
+                            <p class="blocktext">
+                                The incredibly spacious 79 sqm Deluxe Suites enjoy a private balcony with stunning views of the turquoise ocean, and a gorgeous design that reflects the resort’s storied Bangladeshi charm without compromising on modern luxury.
+                            </p>
+                            <a href="@Url.Action("DeluxeSuite","Home")"><button type="button" class="btn btn-outline-primary discover">Read More</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="allglance">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-md-4 blockdescription">
+                    <div class="blockeven child2">
+                        <div class="blockbody">
+                            <h2 class="blocktitle">Premium Suite</h2>
+                            <p class="blocktext">
+                                The epitome of luxury and elegance, the 128sqm Premium Suites enjoy a private balcony with stunning views of the turquoise ocean, and a gorgeous design that reflects the resort’s storied Bangladeshi charm without compromising on modern luxury.
+                            </p>
+                            <p class="blocktext">
+                                A truly indulgent experience, The Premium Suites are ideal for the discerning traveller looking for space to relax, unwind and create unforgettable memories.
+                            </p>
+                            <a href="@Url.Action("PremiumSuite","Home")"><button type="button" class="btn btn-outline-primary discover">Read More</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 blockimgeven child2">
+                    <div id="carouselExampleIndicators3" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        </div>
+                        <div class="carousel-inner carboxeven">
+                            <div class="carousel-item active">
+                                <img src="~/Content/images/Rooms & Suites/PremiumSuite/Suite2.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/images/Rooms & Suites/PremiumSuite/Suite2_3.jpeg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="allglance">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 blockimgodd child3">
+                    <div id="carouselExampleIndicators4" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        </div>
+                        <div class="carousel-inner carboxodd">
+                            <div class="carousel-item active">
+                                <img src="~/Content/images/Rooms & Suites/OceanSideRoom/Room1.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/images/Rooms & Suites/OceanSideRoom/Room1_2.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4 blockdescription">
+                    <div class="blockodd child3">
+                        <div class="blockbody">
+                            <h2 class="blocktitle">Ocean Side Room</h2>
+                            <p class="blocktext">
+                                The expansive Ocean Side Rooms are set right on The GrandBlue's golden beach front and offer stunning views of the turquoise sea beyond from the private balcony or terrace.
+                            </p>
+                            <a href="@Url.Action("OceanSideRoom","Home")"><button type="button" class="btn btn-outline-primary discover">Read More</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

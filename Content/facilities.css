@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');/*Montserrat*/
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');/*Tangerine*/
+@import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');/*Philosopher*/
+
+body{
+    background: #eee;
+    background-image: url("https://images.squarespace-cdn.com/content/5c9e66e1d7819e21e09450be/1563554293246-0SPHBTNXDKYBXUU1O4SZ/bg_pattern.png?content-type=image%2Fpng");
+    background-attachment: fixed;
+}
+#subheading{
+    color: white;
+    font-family: 'Tangerine', cursive;
+    margin-bottom: 0;
+}
+#offcanvasNavbarLabel{
+    font-family: 'Philosopher', sans-serif;
+    color: white;
+}
+.navtext{
+    font-family: 'Montserrat';
+}
+.dropdown-divider{
+    color: white;
+}
+.maincontent{
+    margin-top: 5em;
+    margin-bottom: 10em;
+}
+.card-title{
+    font-family: 'Philosopher', sans-serif;
+    font-size: 150%;
+    text-align: center;
+}
+.card-text{
+    font-family: 'Montserrat';
+    text-align: center;
+    margin-top: 15%;
+}
+
+
+.footer{
+    background: #006ba1;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 5%;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+#cpyrttext{
+    color: white;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 0px;
+}

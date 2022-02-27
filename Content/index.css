@@ -1,0 +1,207 @@
+.maincontent{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#contentbar{
+    max-width: 35%;
+    min-width: 250px;
+}
+.allglance{
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+.carboxodd{
+    box-shadow: -2px 5px 34px 0px rgba(0,0,0,0.7);
+}
+.carboxeven{
+    box-shadow: 2px 5px 34px 0px rgba(0,0,0,0.7);
+}
+@media (min-width: 768px){ 
+    .blockimgodd{
+        z-index: 0;
+        transform: translateX(4.5%);
+    }
+    .blockimgeven{
+        z-index: 0;
+        transform: translateX(-4.5%);
+    }
+    .blockodd{
+        background: #eee;
+        background-image: url("https://images.squarespace-cdn.com/content/5c9e66e1d7819e21e09450be/1563554293246-0SPHBTNXDKYBXUU1O4SZ/bg_pattern.png?content-type=image%2Fpng");
+        background-attachment: fixed;
+        box-shadow: 2px 5px 34px 0px rgba(0,0,0,0.5);
+        opacity: 0.9;
+        transform: translateX(-4.5%);
+    }
+    .blockeven{
+        background: #eee;
+        background-image: url("https://images.squarespace-cdn.com/content/5c9e66e1d7819e21e09450be/1563554293246-0SPHBTNXDKYBXUU1O4SZ/bg_pattern.png?content-type=image%2Fpng");
+        background-attachment: fixed;
+        box-shadow: -2px 5px 34px 0px rgba(0,0,0,0.5);
+        opacity: 0.9;
+        transform: translateX(4.5%);
+    }
+    @keyframes fadeleft {
+        0% {
+           opacity: 0;
+           transform: translateX(0);
+        }
+        100% {
+           opacity: 0.9;
+           transform: translateX(-4.5%);
+        }
+    }
+    @keyframes faderight {
+        0% {
+           opacity: 0;
+           transform: translateX(0);
+        }
+        100% {
+           opacity: 0.9;
+           transform: translateX(4.5%);
+        }
+    }
+    @keyframes fadeleftimg {
+        0% {
+           opacity: 0;
+           transform: translateX(0);
+        }
+        100% {
+           opacity: 1;
+           transform: translateX(-4.5%);
+        }
+    }
+    @keyframes faderightimg {
+        0% {
+           opacity: 0;
+           transform: translateX(0);
+        }
+        100% {
+           opacity: 1;
+           transform: translateX(4.5%);
+        }
+    }
+    .blockodd-animation{
+        animation-name: fadeleft;
+        animation-duration: 1500ms;
+    }
+    .blockeven-animation{
+        animation-name: faderight;
+        animation-duration: 1500ms;
+    }
+    .blockimgodd-animation{
+        animation-name: faderightimg;
+        animation-duration: 1500ms;
+    }
+    .blockimgeven-animation{
+        animation-name: fadeleftimg;
+        animation-duration: 1500ms;
+    }
+}
+@media (max-width: 767px) { 
+    .blockimgodd{
+        z-index: 0;
+    }
+    .blockimgeven{
+        z-index: 0;
+    }
+    .blockodd{
+        background: #eee;
+        background-image: url("https://images.squarespace-cdn.com/content/5c9e66e1d7819e21e09450be/1563554293246-0SPHBTNXDKYBXUU1O4SZ/bg_pattern.png?content-type=image%2Fpng");
+        background-attachment: fixed;
+        box-shadow: 2px 5px 34px 0px rgba(0,0,0,0.5);
+        opacity: 0.9;
+    }
+    .blockeven{
+        background: #eee;
+        background-image: url("https://images.squarespace-cdn.com/content/5c9e66e1d7819e21e09450be/1563554293246-0SPHBTNXDKYBXUU1O4SZ/bg_pattern.png?content-type=image%2Fpng");
+        background-attachment: fixed;
+        box-shadow: -2px 5px 34px 0px rgba(0,0,0,0.5);
+        opacity: 0.9;
+    }
+    @keyframes fadeleft {
+        0% {
+           opacity: 0;
+           transform: translateX(0);
+        }
+        100% {
+           opacity: 0.9;
+        }
+    }
+    @keyframes faderight {
+        0% {
+           opacity: 0;
+           transform: translateX(0);
+        }
+        100% {
+           opacity: 0.9;
+        }
+    }
+    @keyframes fadeleftimg {
+        0% {
+           opacity: 0;
+           transform: translateX(0);
+        }
+        100% {
+           opacity: 1;
+        }
+    }
+    @keyframes faderightimg {
+        0% {
+           opacity: 0;
+           transform: translateX(0);
+        }
+        100% {
+           opacity: 1;
+        }
+    }
+    .blockodd-animation{
+        animation-name: fadeleft;
+        animation-duration: 1500ms;
+    }
+    .blockeven-animation{
+        animation-name: faderight;
+        animation-duration: 1500ms;
+    }
+    .blockimgodd-animation{
+        animation-name: faderightimg;
+        animation-duration: 1500ms;
+    }
+    .blockimgeven-animation{
+        animation-name: fadeleftimg;
+        animation-duration: 1500ms;
+    }
+}
+.blockdescription{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.blockbody{
+    padding-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 10%;
+}
+.blocktitle{
+    font-family: 'Philosopher', sans-serif;
+    color: #006ba1;
+    padding-bottom: 5%;
+}
+.blocktext{
+    font-family: 'Montserrat';
+    font-size: 13px;
+    font-weight: bold;
+}
+.discover{
+    font-family: 'Philosopher', sans-serif;
+    color: #006ba1;
+    border-color:#006ba1;
+    margin-left: 1.5%;
+}
+.discover:hover{
+    background: #006ba1;
+    color: white;
+    border-color:#006ba1;
+}

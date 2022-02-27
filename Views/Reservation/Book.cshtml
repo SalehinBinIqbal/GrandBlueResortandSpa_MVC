@@ -1,0 +1,217 @@
+﻿
+@{
+    ViewBag.Title = "Book";
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/facilities.css">
+    <!-- <link rel="stylesheet" href="css/contactus.css"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/book.css">
+    <link rel="stylesheet" href="~/Content/jquery-ui.css">
+    <title>Book</title>
+</head>
+<body>
+    <div>
+        <div class="maincontent">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="headingtext">
+                                        <h4 class="bookheading" id="hdtxt">
+                                            Guest Information
+                                        </h4>
+                                        <h6 id="hdortxt">
+                                            OR
+                                        </h6>
+                                        <button class="btn btn-primary" id="booklogin" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                            Login to Book Faster
+                                        </button>
+                                        <div class="collapse" id="collapseExample">
+                                            <div class="card card-body">
+                                                <form action="" method="POST">
+                                                    <div class="form-group">
+                                                        <!-- <label class="text" style="float: left; margin-right: 0.5em; transform: translateY(0.45em);">Member ID</label> -->
+                                                        <input style="max-width: 14.5em; float: left; margin-right: 0.5em;" type="email" name="id" placeholder="Email" value="" class="form-control" required />
+                                                        <input style="max-width: 14.5em; float: left; margin-right: 0.5em;" type="password" name="password" placeholder="Password" value="" class="form-control" minlength="6" required />
+                                                        <input name="submitmem" type="submit" value="Login" class="btn btn-success text" />
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <hr style="border-color: black; opacity: 1; margin-bottom: 5%;" class="dropdown-divider"> -->
+                                    <form action="" method="POST" id="myForm">
+                                        <div style="display: none;">
+                                            <td></td>
+                                        </div>
+
+
+                                        <div class="form-group mb-3">
+                                            <label class="txt">Name</label>
+                                            <input type="text" autocomplete="off" name="name" value="" class="form-control frm" required />
+                                        </div>
+
+                                        <div class="form-group mb-3">
+                                            <label for="exampleDataList" class="form-label txt">Gender</label>
+                                            <input class="form-control frmdd" name="gender" list="datalistOptions" pattern="Male|Female|Other" id="exampleDataList" required>
+                                            <datalist id="datalistOptions">
+                                                <option value="Male">
+                                                <option value="Female">
+                                                <option value="Other">
+                                            </datalist>
+                                        </div>
+
+
+                                        <div class="form-group mb-3">
+                                            <label class="txt">Email</label>
+                                            <input type="email" autocomplete="off" name="email" value="" class="form-control frm" required />
+                                        </div>
+
+                                        <div class="form-group mb-3">
+                                            <label class="txt">Mobile Number</label>
+                                            <input type="tel" autocomplete="off" name="phone" value="" class="form-control frm" required>
+                                        </div>
+
+                                        <div class="form-group mb-3">
+                                            <label class="txt">NID/Passport No.</label>
+                                            <input type="text" autocomplete="off" name="nid&psprt" value="" class="form-control frm" required>
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label class="txt">Date of Birth</label>
+                                            <div class="input-container">
+                                                <input type="text" autocomplete="off" name="dob" value="" placeholder="MM/DD/YYYY" class="form-control frmdd datepicker" required><i class="fa fa-calendar"></i>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label for="exampleDataList" class="form-label txt">Nationality</label>
+                                            <input class="form-control frmdd" name="nationality" list="datalistOptions1" id="exampleDataList1" required>
+                                            <datalist id="datalistOptions1">
+                                                <option value="Australia">
+                                                <option value="Austria">
+                                                <option value="Bangladesh">
+                                                <option value="Belgium">
+                                                <option value="Brazil">
+                                                <option value="Canada">
+                                                <option value="Chile">
+                                                <option value="China">
+                                                <option value="Croatia">
+                                                <option value="Denmark">
+                                                <option value="Egypt">
+                                                <option value="England">
+                                                <option value="France">
+                                                <option value="Germany">
+                                                <option value="Hungary">
+                                                <option value="India">
+                                                <option value="Indonesia">
+                                                <option value="Italy">
+                                                <option value="Japan">
+                                                <option value="Malaysia">
+                                                <option value="Mexico">
+                                                <option value="Nepal">
+                                                <option value="Netherland">
+                                                <option value="New Zealand">
+                                                <option value="Pakistan">
+                                                <option value="Philippines">
+                                                <option value="Russia">
+                                                <option value="Saudi Arabia">
+                                                <option value="Singapore">
+                                                <option value="South Korea">
+                                                <option value="Spain">
+                                                <option value="Thailand">
+                                                <option value="United Kingdom">
+                                                <option value="United States">
+                                                <option value="Vietnam">
+                                            </datalist>
+                                        </div>
+
+
+                                        <h4 class="bookheading" style="margin-top: 10%;">
+                                            Booking Information
+                                        </h4>
+                                        <hr style="border-color: black; opacity: 1; border-style:dashed; margin-bottom: 5%;" class="dropdown-divider">
+                                        <div class="form-group mb-3">
+                                            <label class="txt">Selected Room</label>
+                                            <input type="text" autocomplete="off" name="selectedroom" value="" class="form-control frm" disabled />
+
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label class="txt">Check In</label>
+                                            <input type="text" autocomplete="off" name="checkin" value="" class="form-control frm" disabled />
+
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label class="txt">Check Out</label>
+                                            <input type="text" autocomplete="off" name="checkout" value="" class="form-control frm" disabled />
+
+                                        </div>
+                                        <h4 class="bookheading" style="margin-top: 5%;">
+                                            Membership Information
+                                        </h4>
+                                        <hr style="border-color: black; opacity: 1; border-style:dashed; margin-bottom: 2.5%;" class="dropdown-divider">
+                                        <div class="form-group mb-3">
+                                            <div class="input-container">
+                                                <label for="exampleDataList" class="form-label txt">Do you want to be our member?</label>
+                                                <p id="roomdetailslink">(Extra charges may apply)*</p>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="memberyes">
+                                                <label class="form-check-label text" for="flexRadioDefault1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="memberno" checked>
+                                                <label class="form-check-label text" for="flexRadioDefault2">
+                                                    No
+                                                </label>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="form-group mb-3" style="float: right;">
+                                            <input name="book" type="submit" value="Book Now" class="btn btn-outline-primary bookheading" id="sbmt" />
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p id="cpyrttext">
+            © Copyright 2021 GrandBlue Resort & Spa. | All Rights Reserved | Powered by ATS
+        </p>
+    </div>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/jquery-1.12.4.js"></script>
+    <script src="~/Scripts/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( ".datepicker" ).datepicker();
+        } );
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,301 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade topcarousel" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="~/Content/images/homepage/banner1.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="~/Content/images/homepage/banner2.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="~/Content/images/homepage/banner3.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="~/Content/images/homepage/banner4.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="~/Content/images/homepage/banner5.png" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<div class="text-center">
+    <a href="@Url.Action("Index","Home")">
+        <img class="logo" src="~/Content/images/commonimages/Logo.png" alt="...">
+    </a>
+    <div class="logotext">
+        <a id="grandtext" href="@Url.Action("Index","Home")">Grand</a>
+        <a id="bluetext" href="@Url.Action("Index","Home")">Blue</a>
+        <div id="resorttext">
+            <p><a id="subtext" href="@Url.Action("Index","Home")">Resort & Spa</a></p>
+        </div>
+    </div>
+</div>
+
+<div class="commonblock">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="blocktext1">Welcome to</h2>
+                <h2 class="blocktext2">
+                    GrandBlue Resort & Spa
+                </h2>
+                <div class="text-center">
+                    <img id="welcomebar" src="~/Content/images/commonimages/line.png" alt="">
+                </div>
+                <p class="blocksubtext">
+                    The one & only five star resort in the Chittagong region of Bangladesh. Equipped with all modern state of the art amenities and facilities, located in Cox's Bazar (the sea capital of Bangladesh), around eight hours drive from Dhaka. This resort is the true combination of ultimate luxury, gracious hospitality and admirable bluish. Classified in 05 categories with 100 villas, hotel rooms and suites GrandBlue welcomes you in Cox's Bazar to enjoy your holiday or vacation with comfort and luxury.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="maincontent">
+    <h2 class="blocktext1">At a Glance</h2>
+    <div class="text-center">
+        <img id="contentbar" src="~/Content/images/commonimages/line_1.png" alt="">
+    </div>
+    <div class="allglance">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 blockimgodd child1">
+                    <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                        </div>
+                        <div class="carousel-inner carboxodd">
+                            <div class="carousel-item active">
+                                <img src="~/Content/images/Rooms & Suites/OceanSideVilla/Villa1.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/images/Rooms & Suites/FamilyVilla/Villa2_3.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/images/Rooms & Suites/DeluxeSuite/Suite1.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/images/Rooms & Suites/PremiumSuite/Suite2.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/images/Rooms & Suites/OceanSideRoom/Room1.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4 blockdescription">
+                    <div class="blockodd child1">
+                        <div class="blockbody">
+                            <h2 class="blocktitle">Rooms & Suites</h2>
+                            <p class="blocktext">
+                                Striking a perfect balance between modern luxury and cosy Bengali charm since 2021.
+                            </p>
+                            <p class="blocktext">
+                                Our elegant 100 villas, rooms and suites, with grand sweeping balconies or large outdoor terraces, have been created with indulgence and relaxation in mind.
+                            </p>
+                            <a href="@Url.Action("Rooms","Home")"><button type="button" class="btn btn-outline-primary discover">Discover</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="allglance">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-md-4 blockdescription">
+                    <div class="blockeven child1">
+                        <div class="blockbody">
+                            <h2 class="blocktitle">Restaurants & Cafe</h2>
+                            <p class="blocktext">
+                                GrandBlue is fitted with the most up to date hygienic kitchen maintained and operated by our highly trained team of Food and Beverage specialists.
+                            </p>
+                            <p class="blocktext">
+                                Our service staff are professionally trained and knowledgeable in the local area and aim to assist in making your stay pleasurable and an unforgettable experience.
+                            </p>
+                            <a href="@Url.Action("Dine","Home")"><button type="button" class="btn btn-outline-primary discover">Discover</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 blockimgeven child1">
+                    <div id="carouselExampleIndicators1" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                        </div>
+                        <div class="carousel-inner carboxeven">
+                            <div class="carousel-item active">
+                                <img src="~/Content/images/Restaurants & Cafe/CafeFoam/Cafe.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/images/Restaurants & Cafe/TheSeasideClub/Club_3.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/images/Restaurants & Cafe/TheGrandRestaurant/Restaurant1_1.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/images/Restaurants & Cafe/PoolSideRestaurant/Restaurant2.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/images/Restaurants & Cafe/TheBlueBar/Bar.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="allglance">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 blockimgodd child2">
+                    <div id="carouselExampleIndicators2" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                        </div>
+                        <div class="carousel-inner carboxodd">
+                            <div class="carousel-item active">
+                                <img src="~/Content/images/Relax/Relax_1.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/images/Relax/Relax_2.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/images/Relax/Relax_3.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/images/Relax/Relax_4.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/images/Relax/Relax_5.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4 blockdescription">
+                    <div class="blockodd child2">
+                        <div class="blockbody">
+                            <h2 class="blocktitle">Relaxation</h2>
+                            <p class="blocktext">
+                                GrandBlue Spa is a calming haven with 10 treatment rooms inspired by ancient Asian traditions and healing rituals. All our therapists have been specially selected and trained, with secrets handed down over many generations.
+                            </p>
+                            <p class="blocktext">
+                                You can also build up a sweat in our fully equipped gym and cool off in our three sparkling swimming pools.
+                            </p>
+                            <p class="blocktext">
+                                Our children play zone is also equiped with various types of children activity games which will keep your children busy & joyfull.
+                            </p>
+                            <a href="@Url.Action("Relax","Home")"><button type="button" class="btn btn-outline-primary discover">Discover</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="allglance">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-md-4 blockdescription">
+                    <div class="blockeven child2">
+                        <div class="blockbody">
+                            <h2 class="blocktitle">Recreations</h2>
+                            <p class="blocktext">
+                                GrandBlue is a vibrant playground in a picture-perfect setting. Feel the spray of the sea and wind in your hair with a number of watersports activities, build up a sweat on the hard clay tennis court and cool off in our three sparkling swimming pools.
+                            </p>
+                            <p class="blocktext">
+                                To ensure the safest possible swimming experience at the beach, GrandBlue has internationally certified lifeguards trained by Surf Life Saving Australia patrolling the beach daily.
+                            </p>
+                            <a href="@Url.Action("Enjoy","Home")"><button type="button" class="btn btn-outline-primary discover">Discover</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 blockimgeven child2">
+                    <div id="carouselExampleIndicators3" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                        </div>
+                        <div class="carousel-inner carboxeven">
+                            <div class="carousel-item active">
+                                <img src="~/Content/images/Enjoy/Enjoy2.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/images/Enjoy/Enjoy1.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/images/Enjoy/Enjoy4.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/images/Enjoy/Enjoy3.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/images/Enjoy/Enjoy5.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

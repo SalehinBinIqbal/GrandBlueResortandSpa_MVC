@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');/*Montserrat*/
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');/*Tangerine*/
+@import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');/*Philosopher*/
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: white;
+    /*
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Philosopher', sans-serif;
+    font-family: 'Tangerine', cursive; 
+    #00bfd5 - light blue
+    #006ba1 - dark blue
+    */
+}
+@media (min-width: 250px){
+    .header{
+        width: 250px;
+        position: relative;
+        position: fixed;
+        opacity: 0.8;
+        z-index: 16;
+    }
+    .navbar-brand{
+        display: none;
+    }
+    #navtitle{
+        display: none;
+    }
+    
+}
+@media (min-width: 320px){
+    .header{
+        width: 320px;
+        position: relative;
+        position: fixed;
+        opacity: 0.8;
+        z-index: 16;
+    }
+    .navbar-brand{
+        display: initial;
+    }
+    #navtitle{
+        display: none;
+    } 
+}
+@media (min-width: 350px){
+    .header{
+        width: 350px;
+        position: relative;
+        position: fixed;
+        opacity: 0.8;
+        z-index: 16;
+    }
+    .navbar-brand{
+        display: initial;
+    }
+    #navtitle{
+        display: none;
+    }
+}
+@media (min-width: 400px){
+    .header{
+        width: 400px;
+        position: relative;
+        position: fixed;
+        opacity: 0.8;
+        z-index: 16;
+    }
+    .navbar-toggler{
+        transform: translateX(-8px);
+    }
+    .btn{
+        transform: translateX(-8px);
+    }
+    .navbar-brand{
+        display: initial;
+    }
+    #navtitle{
+        display: initial;
+    }
+}
+@keyframes carouselfade {
+    0% {
+       opacity: 0;
+    }
+    100% {
+       opacity: 1;
+    }
+}
+.topcarousel-animation{
+    animation-name: carouselfade;
+    animation-duration: 2s;
+}
+#subheading{
+    font-family: 'Tangerine', cursive;
+    margin-bottom: 0px;
+}
+#navtitle{
+    font-family: 'Montserrat';
+    color: white;
+    margin-bottom: 3px;
+}
+.btn{
+    font-family: 'Montserrat', sans-serif;
+}
+#offcanvasNavbar{
+    background: black;
+    color: white;
+}
+#offcanvasNavbarLabel{
+    font-family: 'Montserrat';
+    font-weight: 800;
+}
+.navbarwords{
+    font-family: 'Montserrat';
+    font-weight: 400;
+    transform: translateX(0);
+    animation-name: fadelefttext;
+    animation-duration: 500ms;
+}
+@keyframes faderighttext {
+    0% {
+       transform: translateX(0);
+    }
+    100% {
+        transform: translateX(5%);
+    }
+}
+@keyframes fadelefttext {
+    0% {
+       transform: translateX(5%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+.navbarwords:hover{
+    color: #00bfd5;
+    transform: translateX(5%);
+    animation-name: faderighttext;
+    animation-duration: 500ms;
+}
+.carousel-control-prev-icon{
+    visibility: hidden;
+}
+.carousel-control-next-icon{
+    visibility: hidden;
+}
+.logo{
+    position: relative;
+    background: white;
+    width: 112.5px;
+    padding: 20px;
+    border-radius: 100%;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    transform: translateY(-30px);
+}
+.logotext{
+    transform: translateY(-50px);
+}
+#grandtext{
+    font-family: 'Philosopher', sans-serif;
+    color: #00bfd5;
+    font-size: 55px;
+    text-decoration: none;
+}
+#bluetext{
+    font-family: 'Philosopher', sans-serif;
+    color: #006ba1;
+    font-size: 55px;
+    text-decoration: none;
+}
+#resorttext{
+    transform: translateY(-25px);
+}
+#subtext{
+    font-family: 'Tangerine', cursive;
+    color: black;
+    font-size: 35px;
+    text-decoration: none;
+}
+@keyframes fadeupblk {
+    0% {
+       opacity: 0;
+       transform: translateY(50%);
+    }
+    100% {
+       opacity: 1;
+       transform: translateY(0);
+    }
+}
+.commonblock-animation{
+    animation-name: fadeupblk;
+    animation-duration: 1000ms;
+}
+.commonblock{
+    background: #eee;
+    background-image: url("https://images.squarespace-cdn.com/content/5c9e66e1d7819e21e09450be/1563554293246-0SPHBTNXDKYBXUU1O4SZ/bg_pattern.png?content-type=image%2Fpng");
+    background-attachment: fixed;
+    margin-top: -60px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    box-shadow: 0 5px 50px 0px rgba(0, 0, 0, 0.2);
+}
+.blocktext1{
+    font-family: 'Philosopher', sans-serif;
+    font-style: italic;
+    text-align: center;
+}
+.blocktext2{
+    font-family: 'Philosopher', sans-serif;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.blocksubtext{
+    font-family: 'Montserrat';
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    padding-top: 30px;
+    padding-left: 15%;
+    padding-right: 15%;
+    line-height: 1.8;
+}
+#welcomebar{
+    max-width: 75%;
+    min-width: 255px;
+}
+.prefooter{
+    
+    background: #00bfd5;
+    background-image: url("https://images.squarespace-cdn.com/content/5c9e66e1d7819e21e09450be/1563554293246-0SPHBTNXDKYBXUU1O4SZ/bg_pattern.png?content-type=image%2Fpng");
+    background-attachment: fixed;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.footerlink{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    line-height: 3;
+}
+.footerlink:hover{
+    color: black;
+}
+#footername{
+    color: white;
+    font-family: 'Philosopher', sans-serif; 
+    font-size: 36px;  
+}
+#footertext{
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+}
+#followsection{
+    margin-top: 15px;
+}
+#followus{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+#footerimglink{
+    transform: translateX(-15px);
+}
+.footer{
+    background: #006ba1;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+#cpyrttext{
+    color: white;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 0px;
+}

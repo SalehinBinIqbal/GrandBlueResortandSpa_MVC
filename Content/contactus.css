@@ -1,0 +1,89 @@
+.contactblock{
+    
+    background: #eee;
+    background-image: url("https://images.squarespace-cdn.com/content/5c9e66e1d7819e21e09450be/1563554293246-0SPHBTNXDKYBXUU1O4SZ/bg_pattern.png?content-type=image%2Fpng");
+    background-attachment: fixed;
+    margin-top: -60px;
+    margin-bottom: 150px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    box-shadow: 0 5px 50px 0px rgba(0, 0, 0, 0.2);
+}
+#headingtext{
+    margin-bottom: 80px;
+}
+#contactheading1{
+    font-family: 'Montserrat';
+    font-size: 150%;
+    color: black;
+    margin-bottom: 0; 
+    letter-spacing: 0.1em;
+    /* transform: translateX(-4.2%); */
+}
+#contactheading2{
+    font-family: 'Philosopher', sans-serif;
+    font-size: 400%;
+    color: #006ba1; 
+}
+.text{
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: 600;
+}
+@keyframes focus {
+    0% {
+       width: 70%;
+    }
+    100% {
+       width: 100%;
+    }
+}
+@keyframes focuslost {
+    0% {
+       width: 100%;
+    }
+    100% {
+       width: 70%;
+    }
+}
+.form-control{
+    background: #eee;
+    background-image: url("https://images.squarespace-cdn.com/content/5c9e66e1d7819e21e09450be/1563554293246-0SPHBTNXDKYBXUU1O4SZ/bg_pattern.png?content-type=image%2Fpng");
+    background-attachment: fixed;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 70%;
+    border-color: black;
+    animation-name: focuslost;
+    animation-duration: 500ms;
+    margin-bottom: 50px;
+
+    font-family: 'Montserrat';
+}
+.form-control:focus{
+    background: #eee;
+    background-image: url("https://images.squarespace-cdn.com/content/5c9e66e1d7819e21e09450be/1563554293246-0SPHBTNXDKYBXUU1O4SZ/bg_pattern.png?content-type=image%2Fpng");
+    background-attachment: fixed;
+    animation-name: focus;
+    animation-duration: 500ms;
+    width: 100%;
+    border-color: #006ba1;
+    box-shadow: none;
+}
+.form-control::placeholder{
+    font-family: 'Montserrat';
+    font-size: 18px;
+}
+.submit{
+    font-family: 'Philosopher', sans-serif;
+    font-size: 125%;
+    color: #006ba1;
+    border-color:#006ba1;
+    margin-left: 0.7%;
+}
+.submit:hover{
+    background: #006ba1;
+    color: white;
+    border-color:#006ba1;
+}

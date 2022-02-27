@@ -1,0 +1,129 @@
+html{
+    scroll-behavior: smooth;
+}
+.bookheading{
+    font-family: 'Philosopher', sans-serif;
+    color: #006ba1;
+    border-color:#006ba1;
+}
+#hdtxt{
+    float: left;
+    margin-right: 0.5em;
+}
+#hdortxt{
+    float: left;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    transform: translateY(21.43%);
+    margin-right: 0.5em;
+}
+#booklogin{
+    transform: translateY(-10%);
+    background: #006ba1;
+    font-family: 'Philosopher', sans-serif;
+    color: white;
+    border-color:#006ba1;
+}
+#sbmt{
+    margin-top: 5%;
+    font-size: 1.10em;
+}
+#sbmt:hover{
+    background: #006ba1;
+    color: white;
+    border-color:#006ba1;
+}
+.card-body{
+    max-width: 37.15em;
+    margin-top: 0.2em;
+    background: #006ba1; 
+    background-image: url("https://images.squarespace-cdn.com/content/5c9e66e1d7819e21e09450be/1563554293246-0SPHBTNXDKYBXUU1O4SZ/bg_pattern.png?content-type=image%2Fpng");
+    background-attachment: fixed;
+    opacity: 0.9;
+}
+.text{
+    font-family: 'Montserrat';
+}
+#myForm{
+    margin-top: 5%;
+}
+@keyframes focus {
+    0% {
+       width: 50%;
+    }
+    100% {
+       width: 80%;
+    }
+}
+@keyframes focuslost {
+    0% {
+       width: 80%;
+    }
+    100% {
+       width: 50%;
+    }
+}
+.txt{
+    font-family: 'Philosopher', sans-serif;
+    font-size: 1.25em;
+}
+.frm{
+    background: #eee;
+    background-image: url("https://images.squarespace-cdn.com/content/5c9e66e1d7819e21e09450be/1563554293246-0SPHBTNXDKYBXUU1O4SZ/bg_pattern.png?content-type=image%2Fpng");
+    background-attachment: fixed;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 50%;
+    border-color: black;
+    animation-name: focuslost;
+    animation-duration: 500ms;
+    margin-bottom: 50px;
+
+    font-family: 'Montserrat';
+}
+.frm:focus{
+    background: #eee;
+    background-image: url("https://images.squarespace-cdn.com/content/5c9e66e1d7819e21e09450be/1563554293246-0SPHBTNXDKYBXUU1O4SZ/bg_pattern.png?content-type=image%2Fpng");
+    background-attachment: fixed;
+    animation-name: focus;
+    animation-duration: 500ms;
+    width: 80%;
+    border-color: #006ba1;
+    box-shadow: none;
+}
+.frmdd{
+    background: #eee;
+    background-image: url("https://images.squarespace-cdn.com/content/5c9e66e1d7819e21e09450be/1563554293246-0SPHBTNXDKYBXUU1O4SZ/bg_pattern.png?content-type=image%2Fpng");
+    background-attachment: fixed;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 35vh;
+    border-color: black;
+    margin-bottom: 50px;
+    font-family: 'Montserrat';
+}
+.frmdd:focus{
+    background: #eee;
+    background-image: url("https://images.squarespace-cdn.com/content/5c9e66e1d7819e21e09450be/1563554293246-0SPHBTNXDKYBXUU1O4SZ/bg_pattern.png?content-type=image%2Fpng");
+    background-attachment: fixed;
+    border-color: #006ba1;
+    box-shadow: none;
+}
+.input-container{
+    display: flex;
+}
+.fa-calendar{
+    transform: translateX(-2em);
+}
+#roomdetailslink{
+    font-family: 'Montserrat';
+    font-size: 14px;
+    margin-left: 0.3em;
+    transform: translateY(0.48em);
+}
+
+input::-webkit-calendar-picker-indicator {
+    opacity: 100;
+}

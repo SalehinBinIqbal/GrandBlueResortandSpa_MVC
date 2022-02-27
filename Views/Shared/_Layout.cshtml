@@ -1,0 +1,194 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/commondesign.css">
+    <link rel="stylesheet" href="~/Content/index.css">
+    <link rel="stylesheet" href="~/Content/whyus.css">
+    <link rel="stylesheet" href="~/Content/contactus.css">
+    <link rel="stylesheet" href="~/Content/room.css">
+    <link rel="stylesheet" href="~/Content/lightbox.min.css">
+
+    <title>GrandBlue Resort & Spa</title>
+</head>
+<body>
+    <div>
+        <div class="commonheader">
+            <div class="header">
+                <nav class="navbar navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="@Url.Action("Index","Home")">
+                            <div class="text-center">
+                                <img src="~/Content/images/commonimages/Logo.png" width="40px" alt="">
+                                <p id="subheading">Resort & Spa</p>
+                            </div>
+                        </a>
+                        <h4 id="navtitle">Menu</h4>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <a class="btn btn-secondary" href="@Url.Action("Index","Reservation")" target="_blank" role="button">Reservation</a>
+                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                            <div class="offcanvas-header">
+                                <h3 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h3>
+                                <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="@Url.Action("Index","Home")"><p class="navbarwords">Home</p></a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="@Url.Action("WhyUs","Home")"><p class="navbarwords">Why Us</p></a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="@Url.Action("Rooms","Home")"><p class="navbarwords">Rooms & Suites</p></a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="@Url.Action("Dine","Home")"><p class="navbarwords">Restaurants & Cafe</p></a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="@Url.Action("Relax","Home")"><p class="navbarwords">Relaxation</p></a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="@Url.Action("Enjoy","Home")"><p class="navbarwords">Recreations</p></a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="@Url.Action("Contact","Home")"><p class="navbarwords">Contact Us</p></a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="@Url.Action("Team","Home")" target="_blank"><p class="navbarwords">Team</p></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div>
+            @RenderBody();
+        </div>
+
+        <div class="commonfooter">
+            <div class="prefooter">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h3 id="footername">GrandBlue Resort & Spa</h3>
+                                    <p id="footertext">Inani, Cox's Bazar, Chittagong, Bangladesh.</p>
+                                </div>
+                            </div>
+                            <div class="row" id="followsection">
+                                <div class="col-sm-12">
+                                    <h5 id="followus">Follow Us</h5>
+                                </div>
+                            </div>
+                            <div class="row" id="footerimglink">
+                                <div class="col-sm-12">
+                                    <div class="row row-cols-4">
+                                        <div class="col-sm-3">
+                                            <a href="https://www.facebook.com" target="_blank">
+                                                <img id="fb" data-toggle="tooltip" data-placement="bottom" title="Facebook" src="~/Content/images/commonimages/facebook.svg" width="50px" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a href="https://www.twitter.com/login" target="_blank">
+                                                <img id="tweet" data-toggle="tooltip" data-placement="bottom" title="Twitter" src="~/Content/images/commonimages/twitter.svg" width="50px" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a href="https://www.instagram.com" target="_blank">
+                                                <img id="ig" data-toggle="tooltip" data-placement="bottom" title="Instagram" src="~/Content/images/commonimages/instagram.svg" width="50px" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a href="https://www.discord.com/login" target="_blank">
+                                                <img id="dc" data-toggle="tooltip" data-placement="bottom" title="Discord" src="~/Content/images/commonimages/discord.svg" width="50px" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="text-center">
+                                <img src="~/Content/images/whyus/award.png" width="125px" alt="">
+                                <img src="~/Content/images/whyus/award2.png" width="125px" alt="">
+                            </div>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <div class="row row-cols-2">
+                                <div class="col-sm-6">
+                                    <a class="footerlink" href="@Url.Action("Rooms","Home")">Stay</a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a class="footerlink" href="@Url.Action("Index","Reservation")" target="_blank">Book</a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a class="footerlink" href="@Url.Action("Dine","Home")">Dine</a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a class="footerlink" href="@Url.Action("WhyUs","Home")">About</a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a class="footerlink" href="@Url.Action("Relax","Home")">Relax</a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a class="footerlink" href="@Url.Action("Contact","Home")">Contact</a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a class="footerlink" href="@Url.Action("Enjoy","Home")">Enjoy</a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a class="footerlink" href="@Url.Action("Team","Home")" target="_blank">Team</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <p id="cpyrttext">
+                    © Copyright 2021 GrandBlue Resort & Spa. | All Rights Reserved | Powered by ATS
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/aos.js"></script>
+</body>
+</html>

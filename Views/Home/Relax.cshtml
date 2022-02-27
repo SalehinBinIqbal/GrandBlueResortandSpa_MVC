@@ -1,0 +1,273 @@
+﻿
+@{
+    ViewBag.Title = "Relax";
+}
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade topcarousel" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="~/Content/images/banners/banner_4.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="~/Content/images/banners/banner_6.png" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+            data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+            data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<div class="text-center">
+    <a href="@Url.Action("Index","Home")">
+        <img class="logo" src="~/Content/images/commonimages/Logo.png" alt="...">
+    </a>
+    <div class="logotext">
+        <a id="grandtext" href="@Url.Action("Index","Home")">Grand</a>
+        <a id="bluetext" href="@Url.Action("Index","Home")">Blue</a>
+        <div id="resorttext">
+            <p><a id="subtext" href="@Url.Action("Index","Home")">Resort & Spa</a></p>
+        </div>
+    </div>
+</div>
+
+<div class="commonblock">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="blocktext2">
+                    Relax and Unwind
+                </h2>
+                <div class="text-center">
+                    <img id="welcomebar" src="~/Content/images/commonimages/line.png" alt="">
+                </div>
+                <p class="blocksubtext">
+                    As you walk into the Spa, breathe in the scents of lemongrass that fill the air. Feel the sumptuous linen of the spa robes caress your skin.Emerge anew as our therapists bring you a fresh cup of herbal tea to sip in the open-air relaxation room, where you will hear the sounds of birdsong and the waves crashing on the nearby beach.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="maincontent">
+    <h2 class="blocktext1">At a Glance</h2>
+    <div class="text-center">
+        <img id="contentbar" src="~/Content/images/commonimages/line_1.png" alt="">
+    </div>
+    <div class="allglance">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 blockimgodd child1">
+                    <div id="carouselExampleIndicators" class="carousel slide carousel-fade"
+                         data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators"
+                                    data-bs-slide-to="0" class="active" aria-current="true"
+                                    aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators"
+                                    data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators"
+                                    data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner carboxodd">
+                            <div class="carousel-item active">
+                                <img src="~/Content/images/Relax/Relax_1.jpg" class="d-block w-100"
+                                     alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/images/Relax/Relax_2.jpg" class="d-block w-100"
+                                     alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/images/Relax/RelaxLobby2.jpg" class="d-block w-100"
+                                     alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4 blockdescription">
+                    <div class="blockodd child1">
+                        <div class="blockbody">
+                            <h2 class="blocktitle">GrandBlue Spa</h2>
+                            <p class="blocktext">
+                                GrandBlue Spa is a calming haven with 10 treatment rooms inspired by ancient
+                                Asian traditions and healing rituals. All our therapists have been specially
+                                selected and trained, with secrets handed down over many generations.
+                            </p>
+                            <p class="blocktext">
+                                A series of body scrubs, nail care, hair care and skin treatments are available, or you can choose to simply relax in the Jacuzzi, sauna and steam room.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="allglance">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-md-4 blockdescription">
+                    <div class="blockeven child1">
+                        <div class="blockbody">
+                            <h2 class="blocktitle">Gym</h2>
+                            <p class="blocktext">
+                                Apart from spending the leisure time it is necessary to take a good care of health. GrandBlue Resort & Spa presents you a world class gym that can offer you the relax with lavishness.
+                            </p>
+                            <p class="blocktext">
+                                Our service staff are professionally trained and knowledgeable in the local area
+                                and aim to assist in making your stay pleasurable and an unforgettable
+                                experience.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 blockimgeven child1">
+                    <div id="carouselExampleIndicators1" class="carousel slide carousel-fade"
+                         data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators1"
+                                    data-bs-slide-to="0" class="active" aria-current="true"
+                                    aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators1"
+                                    data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        </div>
+                        <div class="carousel-inner carboxeven">
+                            <div class="carousel-item active">
+                                <img src="~/Content/images/Relax/Relax_3.png" class="d-block w-100"
+                                     alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/images/Relax/Relax_4.png"
+                                     class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleIndicators1" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleIndicators1" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="allglance">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 blockimgodd child2">
+                    <div id="carouselExampleIndicators2" class="carousel slide carousel-fade"
+                         data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators2"
+                                    data-bs-slide-to="0" class="active" aria-current="true"
+                                    aria-label="Slide 1"></button>
+                        </div>
+                        <div class="carousel-inner carboxodd">
+                            <div class="carousel-item active">
+                                <img src="~/Content/images/Relax/Relax_5.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4 blockdescription">
+                    <div class="blockodd child2">
+                        <div class="blockbody">
+                            <h2 class="blocktitle">Children Play Zone</h2>
+                            <p class="blocktext">
+
+                                Our children play zone is equiped with various types of children activity
+                                games which will keep your children busy & joyfull.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="allglance">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-md-4 blockdescription">
+                    <div class="blockeven child2">
+                        <div class="blockbody">
+                            <h2 class="blocktitle">Detox</h2>
+                            <p class="blocktext">
+                                Unwind as you enjoy our indulgent treatments including Indian Head Massage and Sacred Stone Therapy.
+                            </p>
+                            <p class="blocktext">
+                                For a truly spoiling experience, book the ultra-indulgent Four Hands Massage, this synchronised massage relieves tension from every aching muscle whilst soothing and calming you as energy flows around your body.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 blockimgeven child2">
+                    <div id="carouselExampleIndicators3" class="carousel slide carousel-fade"
+                         data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators3"
+                                    data-bs-slide-to="0" class="active" aria-current="true"
+                                    aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators3"
+                                    data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        </div>
+                        <div class="carousel-inner carboxeven">
+                            <div class="carousel-item active">
+                                <img src="~/Content/images/Relax/RelaxLobby1.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/images/Relax/RelaxLobby3.png" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleIndicators3" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleIndicators3" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

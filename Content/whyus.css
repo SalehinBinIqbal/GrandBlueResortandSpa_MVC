@@ -1,0 +1,36 @@
+.aboutblock{
+    
+    background: #eee;
+    background-image: url("https://images.squarespace-cdn.com/content/5c9e66e1d7819e21e09450be/1563554293246-0SPHBTNXDKYBXUU1O4SZ/bg_pattern.png?content-type=image%2Fpng");
+    background-attachment: fixed;
+    margin-top: -60px;
+    margin-bottom: 150px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    box-shadow: 0 5px 50px 0px rgba(0, 0, 0, 0.2);
+}
+.whyus{
+    margin-bottom: 25px;
+}
+.whyusblock{
+    display: inline;
+    font-family: 'Philosopher', sans-serif;
+    font-style: italic;
+    font-size: 300%;
+    /* text-align: center; */
+}
+.whyusblocktext{
+    display: inline;
+    font-family: 'Montserrat';
+    font-size: 110%;
+    font-weight: bold;
+}
+.whyusblocksubtext1{
+    font-family: 'Montserrat';
+    font-size: 105%;
+}
+.whyusblocksubtext2{
+    font-family: 'Montserrat';
+    font-size: 105%;
+    padding-bottom: 50px;
+}
