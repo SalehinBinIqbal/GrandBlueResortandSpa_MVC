@@ -105,8 +105,9 @@
                                                 <label class="txt">Check In</label>
                                                 <div class="input-container">
                                                     <div class="input-group">
-                                                        <input type="text" autocomplete="off" name="checkout" value="" placeholder="MM/DD/YYYY" class="form-control frmdd datepicker" required>
+                                                        <input type="text" autocomplete="off" id="checkin" name="checkin" value="" placeholder="MM/DD/YYYY" class="form-control frmdd datepicker" required>
                                                         <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
@@ -116,8 +117,9 @@
                                                 <label class="txt">Check Out</label>
                                                 <div class="input-container">
                                                     <div class="input-group">
-                                                        <input type="text" autocomplete="off" name="checkout" value="" placeholder="MM/DD/YYYY" class="form-control frmdd datepicker" required>
+                                                        <input type="text" autocomplete="off" id="checkout" name="checkout" value="" placeholder="MM/DD/YYYY" class="form-control frmdd datepicker" required>
                                                         <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
@@ -146,7 +148,7 @@
                                         </div>
                                         <div class="col-md-7">
                                             <div class="card-body">
-                                                <h5 class="card-title">Ocean Side Villa</h5>
+                                                <h5 class="card-title">Ocean Side Villa</h5>       
                                                 <p class="card-text">Closest to the beach, the 150sqm Ocean Front Pool Villas are the epitome of luxury and elegance. A spacious living room leads on to the private pool. Down pillows, Irish linen and the world’s best bed ensure a good night’s sleep.</p>
                                                 <tbody>
                                                     <tr>
@@ -154,8 +156,22 @@
                                                         <td class="txt">5</td>
                                                     </tr>
                                                 </tbody>
+                                                
                                                 <div class="card-footer">
-                                                    <a href="@Url.Action("Book","Reservation")"><button class="btn btn-secondary" style="float: right;">Book Room</button></a>
+                                                    
+                                                    <script>
+                                                        function passValuesOSV() {
+                                                            var checkin = document.getElementById("checkin").value;
+                                                            var checkout = document.getElementById("checkout").value;
+                                                            var room = "Ocean Side Villa";
+                                                            localStorage.setItem("checkinTime", checkin);
+                                                            localStorage.setItem("checkoutTime", checkout);
+                                                            localStorage.setItem("roomType", room);
+                                                        }
+                                                    </script>
+                                                    <a href="@Url.Action("Book", "Reservation")">
+                                                        <button type="submit" value="click" onclick="passValuesOSV();" class="btn btn-secondary" style="float: right;">Book Room</button>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -175,7 +191,7 @@
                                         </div>
                                         <div class="col-md-7">
                                             <div class="card-body">
-                                                <h5 class="card-title">Family Villa</h5>
+                                                <h5 class="card-title">Family Villa</h5> 
                                                 <p class="card-text">The Family Villas are luxurious 267sqm holiday homes for families or small groups. These two-story, three bedroom villas feature a living room, kitchenette, four bathrooms, two balconies with panoramic garden views. There’s also a terrace with BBQ grill and a large private pool. </p>
                                                 <tbody>
                                                     <tr>
@@ -183,8 +199,21 @@
                                                         <td class="txt">5</td>
                                                     </tr>
                                                 </tbody>
+                                                
                                                 <div class="card-footer">
-                                                    <a href="@Url.Action("Book", "Reservation")"><button class="btn btn-secondary" style="float: right;">Book Room</button></a>
+                                                    
+                                                    <script>
+                                                        function passValuesFV() {
+                                                            var checkin = document.getElementById("checkin").value;
+                                                            var checkout = document.getElementById("checkout").value;
+                                                            var room = "Family Villa";
+                                                            localStorage.setItem("checkinTime", checkin);
+                                                            localStorage.setItem("checkoutTime", checkout);
+                                                            localStorage.setItem("roomType", room);
+                                                        }
+                                                    </script>
+                                                    <a href="@Url.Action("Book", "Reservation")"><button type="submit" value="click" onclick="passValuesFV();" class="btn btn-secondary" style="float: right;"> Book Room</button></a>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -212,8 +241,19 @@
                                                         <td class="txt">5</td>
                                                     </tr>
                                                 </tbody>
+                                                
                                                 <div class="card-footer">
-                                                    <a href="@Url.Action("Book", "Reservation")"><button class="btn btn-secondary" style="float: right;">Book Room</button></a>
+                                                    <script>
+                                                        function passValuesDS() {
+                                                            var checkin = document.getElementById("checkin").value;
+                                                            var checkout = document.getElementById("checkout").value;
+                                                            var room = "Deluxe Suite";
+                                                            localStorage.setItem("checkinTime", checkin);
+                                                            localStorage.setItem("checkoutTime", checkout);
+                                                            localStorage.setItem("roomType", room);
+                                                        }
+                                                    </script>
+                                                    <a href="@Url.Action("Book", "Reservation")"><button value="click" onclick="passValuesDS();" class="btn btn-secondary" style="float: right;">Book Room</button></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -241,8 +281,19 @@
                                                         <td class="txt">5</td>
                                                     </tr>
                                                 </tbody>
+                                                
                                                 <div class="card-footer">
-                                                    <a href="@Url.Action("Book", "Reservation")"><button class="btn btn-secondary" style="float: right;">Book Room</button></a>
+                                                    <script>
+                                                        function passValuesPS() {
+                                                            var checkin = document.getElementById("checkin").value;
+                                                            var checkout = document.getElementById("checkout").value;
+                                                            var room = "Premium Suite";
+                                                            localStorage.setItem("checkinTime", checkin);
+                                                            localStorage.setItem("checkoutTime", checkout);
+                                                            localStorage.setItem("roomType", room);
+                                                        }
+                                                    </script>
+                                                    <a href="@Url.Action("Book", "Reservation")"><button value="click" onclick="passValuesPS();" class="btn btn-secondary" style="float: right;">Book Room</button></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -268,10 +319,23 @@
                                                     <tr>
                                                         <td class="txt">Available:</td>
                                                         <td class="txt">5</td>
+                                                        
                                                     </tr>
                                                 </tbody>
+                                                
                                                 <div class="card-footer">
-                                                    <a href="@Url.Action("Book", "Reservation")"><button class="btn btn-secondary" style="float: right;">Book Room</button></a>
+                                                    
+                                                    <script>
+                                                        function passValuesOSR() {
+                                                            var checkin = document.getElementById("checkin").value;
+                                                            var checkout = document.getElementById("checkout").value;
+                                                            var room = "Ocean Side Room";
+                                                            localStorage.setItem("checkinTime", checkin);
+                                                            localStorage.setItem("checkoutTime", checkout);
+                                                            localStorage.setItem("roomType", room);
+                                                        }
+                                                    </script>
+                                                    <a href="@Url.Action("Book", "Reservation")"><button value="click" onclick="passValuesOSR();" class="btn btn-secondary" style="float: right;">Book Room</button></a>
                                                 </div>
                                             </div>
                                         </div>

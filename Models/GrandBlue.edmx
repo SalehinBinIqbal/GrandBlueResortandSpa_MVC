@@ -5,6 +5,22 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="GrandBlueModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BOOKING">
+          <Key>
+            <PropertyRef Name="bookid" />
+          </Key>
+          <Property Name="bookid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="gender" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="mobile" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="nationalId" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="dob" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="nationality" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="selectedroom" Type="varchar" MaxLength="55" Nullable="false" />
+          <Property Name="checkin" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="checkout" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
         <EntityType Name="CONTACT">
           <Key>
             <PropertyRef Name="Id" />
@@ -15,14 +31,44 @@
           <Property Name="mobile" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="message" Type="text" Nullable="false" />
         </EntityType>
+        <EntityType Name="MEMBER">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="mobile" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="nid" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="nationality" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="text" Nullable="false" />
+        </EntityType>
         <EntityContainer Name="GrandBlueModelStoreContainer">
+          <EntitySet Name="BOOKING" EntityType="Self.BOOKING" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CONTACT" EntityType="Self.CONTACT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MEMBER" EntityType="Self.MEMBER" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GrandBlueModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BOOKING">
+          <Key>
+            <PropertyRef Name="bookid" />
+          </Key>
+          <Property Name="bookid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nationalId" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dob" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="selectedroom" Type="String" MaxLength="55" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="checkin" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="checkout" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
         <EntityType Name="CONTACT">
           <Key>
             <PropertyRef Name="Id" />
@@ -33,8 +79,22 @@
           <Property Name="mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
+        <EntityType Name="MEMBER">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nid" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
         <EntityContainer Name="GrandBlueEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BOOKINGs" EntityType="Self.BOOKING" />
           <EntitySet Name="CONTACTs" EntityType="Self.CONTACT" />
+          <EntitySet Name="MEMBERs" EntityType="Self.MEMBER" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -42,6 +102,23 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="GrandBlueModelStoreContainer" CdmEntityContainer="GrandBlueEntities">
+          <EntitySetMapping Name="BOOKINGs">
+            <EntityTypeMapping TypeName="GrandBlueModel.BOOKING">
+              <MappingFragment StoreEntitySet="BOOKING">
+                <ScalarProperty Name="bookid" ColumnName="bookid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="nationalId" ColumnName="nationalId" />
+                <ScalarProperty Name="dob" ColumnName="dob" />
+                <ScalarProperty Name="nationality" ColumnName="nationality" />
+                <ScalarProperty Name="selectedroom" ColumnName="selectedroom" />
+                <ScalarProperty Name="checkin" ColumnName="checkin" />
+                <ScalarProperty Name="checkout" ColumnName="checkout" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="CONTACTs">
             <EntityTypeMapping TypeName="GrandBlueModel.CONTACT">
               <MappingFragment StoreEntitySet="CONTACT">
@@ -50,6 +127,19 @@
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="mobile" ColumnName="mobile" />
                 <ScalarProperty Name="message" ColumnName="message" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MEMBERs">
+            <EntityTypeMapping TypeName="GrandBlueModel.MEMBER">
+              <MappingFragment StoreEntitySet="MEMBER">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="nid" ColumnName="nid" />
+                <ScalarProperty Name="nationality" ColumnName="nationality" />
+                <ScalarProperty Name="password" ColumnName="password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

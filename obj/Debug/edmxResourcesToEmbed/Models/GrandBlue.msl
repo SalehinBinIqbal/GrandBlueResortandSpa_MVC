@@ -1,6 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="GrandBlueModelStoreContainer" CdmEntityContainer="GrandBlueEntities">
+    <EntitySetMapping Name="BOOKINGs">
+      <EntityTypeMapping TypeName="GrandBlueModel.BOOKING">
+        <MappingFragment StoreEntitySet="BOOKING">
+          <ScalarProperty Name="bookid" ColumnName="bookid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="nationalId" ColumnName="nationalId" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="nationality" ColumnName="nationality" />
+          <ScalarProperty Name="selectedroom" ColumnName="selectedroom" />
+          <ScalarProperty Name="checkin" ColumnName="checkin" />
+          <ScalarProperty Name="checkout" ColumnName="checkout" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="CONTACTs">
       <EntityTypeMapping TypeName="GrandBlueModel.CONTACT">
         <MappingFragment StoreEntitySet="CONTACT">
@@ -9,6 +26,19 @@
           <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="mobile" ColumnName="mobile" />
           <ScalarProperty Name="message" ColumnName="message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MEMBERs">
+      <EntityTypeMapping TypeName="GrandBlueModel.MEMBER">
+        <MappingFragment StoreEntitySet="MEMBER">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="nid" ColumnName="nid" />
+          <ScalarProperty Name="nationality" ColumnName="nationality" />
+          <ScalarProperty Name="password" ColumnName="password" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

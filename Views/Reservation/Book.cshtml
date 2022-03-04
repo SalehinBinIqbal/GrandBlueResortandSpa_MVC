@@ -54,7 +54,7 @@
                                         </div>
                                     </div>
                                     <!-- <hr style="border-color: black; opacity: 1; margin-bottom: 5%;" class="dropdown-divider"> -->
-                                    <form action="" method="POST" id="myForm">
+                                    <form action="/Reservation/Book" method="POST" id="myForm">
                                         <div style="display: none;">
                                             <td></td>
                                         </div>
@@ -83,7 +83,7 @@
 
                                         <div class="form-group mb-3">
                                             <label class="txt">Mobile Number</label>
-                                            <input type="tel" autocomplete="off" name="phone" value="" class="form-control frm" required>
+                                            <input type="tel" autocomplete="off" name="mobile" value="" class="form-control frm" required>
                                         </div>
 
                                         <div class="form-group mb-3">
@@ -146,17 +146,17 @@
                                         <hr style="border-color: black; opacity: 1; border-style:dashed; margin-bottom: 5%;" class="dropdown-divider">
                                         <div class="form-group mb-3">
                                             <label class="txt">Selected Room</label>
-                                            <input type="text" autocomplete="off" name="selectedroom" value="" class="form-control frm" disabled />
+                                            <input type="text" autocomplete="off" id="roomname" name="selectedroom" value="" class="form-control frm" disabled />
 
                                         </div>
                                         <div class="form-group mb-3">
                                             <label class="txt">Check In</label>
-                                            <input type="text" autocomplete="off" name="checkin" value="" class="form-control frm" disabled />
+                                            <input type="text" autocomplete="off" id="checkintime" name="checkin" value="" class="form-control frm" disabled />
 
                                         </div>
                                         <div class="form-group mb-3">
                                             <label class="txt">Check Out</label>
-                                            <input type="text" autocomplete="off" name="checkout" value="" class="form-control frm" disabled />
+                                            <input type="text" autocomplete="off" id="checkouttime" name="checkout" value="" class="form-control frm" disabled />
 
                                         </div>
                                         <h4 class="bookheading" style="margin-top: 5%;">
@@ -183,9 +183,14 @@
 
                                         </div>
 
-
+                                        <script>
+                                            document.getElementById("roomname").value = localStorage.getItem("roomType");
+                                            document.getElementById("checkintime").value = localStorage.getItem("checkinTime");
+                                            document.getElementById("checkouttime").value = localStorage.getItem("checkoutTime");
+                                        </script>
                                         <div class="form-group mb-3" style="float: right;">
                                             <input name="book" type="submit" value="Book Now" class="btn btn-outline-primary bookheading" id="sbmt" />
+
                                         </div>
 
                                     </form>
