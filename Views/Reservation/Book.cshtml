@@ -1,4 +1,4 @@
-﻿
+﻿@model GrandBlueResortandSpa.Models.BOOKING
 @{
     ViewBag.Title = "Book";
     Layout = null;
@@ -88,7 +88,7 @@
 
                                         <div class="form-group mb-3">
                                             <label class="txt">NID/Passport No.</label>
-                                            <input type="text" autocomplete="off" name="nid&psprt" value="" class="form-control frm" required>
+                                            <input type="text" autocomplete="off" name="nationalId" value="" class="form-control frm" required>
                                         </div>
                                         <div class="form-group mb-3">
                                             <label class="txt">Date of Birth</label>
@@ -146,18 +146,18 @@
                                         <hr style="border-color: black; opacity: 1; border-style:dashed; margin-bottom: 5%;" class="dropdown-divider">
                                         <div class="form-group mb-3">
                                             <label class="txt">Selected Room</label>
-                                            <input type="text" autocomplete="off" id="roomname" name="selectedroom" value="" class="form-control frm" disabled />
-
+                                            <input type="text" autocomplete="off" id="roomname" name="selectedroom" value="" class="form-control frm" disabled required/>
+                                            
                                         </div>
                                         <div class="form-group mb-3">
                                             <label class="txt">Check In</label>
-                                            <input type="text" autocomplete="off" id="checkintime" name="checkin" value="" class="form-control frm" disabled />
-
+                                            <input type="text" autocomplete="off" id="checkintime" name="checkin" value="" class="form-control frm" disabled required/>
+                                            
                                         </div>
                                         <div class="form-group mb-3">
                                             <label class="txt">Check Out</label>
-                                            <input type="text" autocomplete="off" id="checkouttime" name="checkout" value="" class="form-control frm" disabled />
-
+                                            <input type="text" autocomplete="off" id="checkouttime" name="checkout" value="" class="form-control frm" disabled required/>
+                                            
                                         </div>
                                         <h4 class="bookheading" style="margin-top: 5%;">
                                             Membership Information
@@ -213,9 +213,9 @@
     <script src="~/Scripts/jquery-1.12.4.js"></script>
     <script src="~/Scripts/jquery-ui.js"></script>
     <script>
-        $( function() {
-            $( ".datepicker" ).datepicker();
-        } );
+        $(function () {
+            $(".datepicker").datepicker();
+        });
     </script>
 </body>
 </html>
