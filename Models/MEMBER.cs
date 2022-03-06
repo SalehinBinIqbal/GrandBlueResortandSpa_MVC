@@ -14,11 +14,13 @@ namespace GrandBlueResortandSpa.Models
     
     public partial class MEMBER
     {
-        public int Id { get; set; }
+        public int MemId { get; set; }
         public string name { get; set; }
+        public string gender { get; set; }
         public string email { get; set; }
         public string mobile { get; set; }
-        public string nid { get; set; }
+        public string nationalId { get; set; }
+        public string dob { get; set; }
         public string nationality { get; set; }
         public string password { get; set; }
     }

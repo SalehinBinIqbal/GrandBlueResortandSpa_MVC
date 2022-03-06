@@ -33,15 +33,17 @@
         </EntityType>
         <EntityType Name="MEMBER">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="MemId" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="gender" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="mobile" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="nid" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="nationalId" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="dob" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="nationality" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="password" Type="text" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityContainer Name="GrandBlueModelStoreContainer">
           <EntitySet Name="BOOKING" EntityType="Self.BOOKING" Schema="dbo" store:Type="Tables" />
@@ -81,15 +83,17 @@
         </EntityType>
         <EntityType Name="MEMBER">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="MemId" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="gender" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="nid" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nationalId" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dob" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityContainer Name="GrandBlueEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BOOKINGs" EntityType="Self.BOOKING" />
@@ -133,11 +137,13 @@
           <EntitySetMapping Name="MEMBERs">
             <EntityTypeMapping TypeName="GrandBlueModel.MEMBER">
               <MappingFragment StoreEntitySet="MEMBER">
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MemId" ColumnName="MemId" />
                 <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="mobile" ColumnName="mobile" />
-                <ScalarProperty Name="nid" ColumnName="nid" />
+                <ScalarProperty Name="nationalId" ColumnName="nationalId" />
+                <ScalarProperty Name="dob" ColumnName="dob" />
                 <ScalarProperty Name="nationality" ColumnName="nationality" />
                 <ScalarProperty Name="password" ColumnName="password" />
               </MappingFragment>

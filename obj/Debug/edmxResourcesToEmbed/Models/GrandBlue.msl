@@ -32,11 +32,13 @@
     <EntitySetMapping Name="MEMBERs">
       <EntityTypeMapping TypeName="GrandBlueModel.MEMBER">
         <MappingFragment StoreEntitySet="MEMBER">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MemId" ColumnName="MemId" />
           <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
           <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="mobile" ColumnName="mobile" />
-          <ScalarProperty Name="nid" ColumnName="nid" />
+          <ScalarProperty Name="nationalId" ColumnName="nationalId" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
           <ScalarProperty Name="nationality" ColumnName="nationality" />
           <ScalarProperty Name="password" ColumnName="password" />
         </MappingFragment>

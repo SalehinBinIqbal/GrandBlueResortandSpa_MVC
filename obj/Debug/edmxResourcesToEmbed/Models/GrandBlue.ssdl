@@ -28,15 +28,17 @@
   </EntityType>
   <EntityType Name="MEMBER">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="MemId" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="gender" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="mobile" Type="varchar" MaxLength="15" Nullable="false" />
-    <Property Name="nid" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="nationalId" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="dob" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="nationality" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="password" Type="text" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="20" Nullable="false" />
   </EntityType>
   <EntityContainer Name="GrandBlueModelStoreContainer">
     <EntitySet Name="BOOKING" EntityType="Self.BOOKING" Schema="dbo" store:Type="Tables" />

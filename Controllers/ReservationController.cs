@@ -9,7 +9,7 @@ namespace GrandBlueResortandSpa.Controllers
 {
     public class ReservationController : Controller
     {
-        GrandBlueEntities gb = new GrandBlueEntities();
+        GrandBlueEntities grandBlue = new GrandBlueEntities();
         // GET: Reservation
         public ActionResult Index()
         {
@@ -21,11 +21,32 @@ namespace GrandBlueResortandSpa.Controllers
         }
 
         [HttpPost]
-        public ActionResult Book(BOOKING booking)
+        public ActionResult Book(BOOKING booking, string name, string gender, string email, 
+                                string mobile, string nationalId, string dob, string nationality, string password)
         {
-            gb.BOOKINGs.Add(booking);
-            gb.SaveChanges();
-            return RedirectToAction("Home/Index");
+            int resCount = grandBlue.MEMBERs.Where(temp => temp.email.Equals(email) || temp.mobile.Equals(mobile) 
+                                                  || temp.nationalId.Equals(nationalId)).Count();
+            if(resCount > 0)
+            {
+                TempData["msg"] = "Member already exists.";
+            }
+            else
+            {
+                MEMBER member = new MEMBER();
+                member.name = name;
+                member.gender = gender;
+                member.email = email;
+                member.mobile = mobile;
+                member.nationalId = nationalId;
+                member.dob = dob;
+                member.nationality = nationality;
+                member.password = password;
+                grandBlue.MEMBERs.Add(member);
+                grandBlue.SaveChanges();
+            }
+            grandBlue.BOOKINGs.Add(booking);
+            grandBlue.SaveChanges();
+            return RedirectToAction("Index");
             //return View();
         }
     }

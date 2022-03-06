@@ -34,7 +34,7 @@ namespace GrandBlueResortandSpa.Controllers
             {
 
                 TempData["msg"] = "Email or Password does not match! Try again.";
-                return RedirectToAction("Index");
+                return RedirectToAction("Home/Index");
             }
         }
         public ActionResult Profile()
