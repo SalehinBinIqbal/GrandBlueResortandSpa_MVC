@@ -21,14 +21,29 @@ namespace GrandBlueResortandSpa.Controllers
         }
 
         [HttpPost]
-        public ActionResult Book(BOOKING booking, string name, string gender, string email, 
-                                string mobile, string nationalId, string dob, string nationality, string password)
+        public ActionResult Book(string name, string gender, string email, 
+                                string mobile, string nationalId, string dob, string nationality, string password,
+                                string selectedroom, string checkin, string checkout)
         {
+            BOOKING booking = new BOOKING();
+            booking.name = name;
+            booking.gender = gender;
+            booking.email = email;
+            booking.mobile = mobile;
+            booking.nationalId = nationalId;
+            booking.dob = dob;
+            booking.nationality = nationality;
+            booking.selectedroom = selectedroom;
+            booking.checkin = checkin;
+            booking.checkout = checkout;
+            grandBlue.BOOKINGs.Add(booking);
+            grandBlue.SaveChanges();
+
             int resCount = grandBlue.MEMBERs.Where(temp => temp.email.Equals(email) || temp.mobile.Equals(mobile) 
                                                   || temp.nationalId.Equals(nationalId)).Count();
             if(resCount > 0)
             {
-                TempData["msg"] = "Member already exists.";
+                TempData["msg"] = "Member already exists.";               
             }
             else
             {
@@ -44,8 +59,7 @@ namespace GrandBlueResortandSpa.Controllers
                 grandBlue.MEMBERs.Add(member);
                 grandBlue.SaveChanges();
             }
-            grandBlue.BOOKINGs.Add(booking);
-            grandBlue.SaveChanges();
+
             return RedirectToAction("Index");
             //return View();
         }
