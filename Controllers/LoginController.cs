@@ -16,25 +16,28 @@ namespace GrandBlueResortandSpa.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Index(String email, String password)
+        public ActionResult Index(MEMBER member)
         {
-            int resCount = grandBlue.MEMBERs.Where(temp => temp.email.Equals(email) & temp.password.Equals(password)).Count();
-            if (resCount > 0)
+            var loggedin = false;
+            var checklogin = grandBlue.MEMBERs.Where(temp => temp.email.Equals(member.email) & temp.password.Equals(member.password)).FirstOrDefault();
+            if (loggedin == true)
             {
-                List<MEMBER> user = grandBlue.MEMBERs.Where(temp => temp.email.Equals(email)).ToList();
-                foreach (var i in user)
-                {
-                    Session["username"] = i.email;
-                    //Session["userType"] = i.type;
-                }
-
+                ViewBag.Email = "Member already logged in";
+                return RedirectToAction("Home/Index");
+            }
+        
+            else if (checklogin != null)
+            {
+                Session["email"] = checklogin.email;
+                ViewBag.Login = "login check";
+                loggedin = true;
                 return RedirectToAction("Profile");
             }
             else
             {
 
-                TempData["msg"] = "Email or Password does not match! Try again.";
-                return RedirectToAction("Home/Index");
+                ViewBag.Notification = "Wrong Email or password";
+                return View();
             }
         }
         public ActionResult Profile()
