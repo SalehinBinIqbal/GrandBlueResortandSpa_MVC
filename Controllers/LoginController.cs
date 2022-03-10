@@ -13,30 +13,40 @@ namespace GrandBlueResortandSpa.Controllers
         GrandBlueEntities grandBlue = new GrandBlueEntities();
         public ActionResult Index()
         {
-            return View();
+            if (Session["email"] == null)
+            {
+                if (TempData["message"] != null)
+                {
+                    ViewBag.Message = TempData["msg"].ToString();
+                }
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Reservation");
+            }
         }
         [HttpPost]
         public ActionResult Index(MEMBER member)
         {
-            var loggedin = false;
-            var checklogin = grandBlue.MEMBERs.Where(temp => temp.email.Equals(member.email) & temp.password.Equals(member.password)).FirstOrDefault();
-            if (loggedin == true)
+            //var loggedin = false;
+            
+            if (Session["email"] == null)
             {
                 ViewBag.Email = "Member already logged in";
-                return RedirectToAction("Home/Index");
+                RedirectToAction("Index", "Home");
             }
-        
-            else if (checklogin != null)
+            var checklogin = grandBlue.MEMBERs.Where(temp => temp.email.Equals(member.email) & temp.password.Equals(member.password)).FirstOrDefault();
+            if (checklogin != null)
             {
                 Session["email"] = checklogin.email;
-                ViewBag.Login = "login check";
-                loggedin = true;
+                //ViewBag.Login = "login check";
                 return RedirectToAction("Profile");
             }
             else
             {
-
-                ViewBag.Notification = "Wrong Email or password";
+                TempData["message"] = "Email or Password does not match! Try again.";
+                //ViewBag.Notification = "Wrong Email or password";
                 return View();
             }
         }
