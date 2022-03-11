@@ -23,7 +23,7 @@ namespace GrandBlueResortandSpa.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Reservation");
+                return RedirectToAction("Profile");
             }
         }
         [HttpPost]
@@ -50,6 +50,13 @@ namespace GrandBlueResortandSpa.Controllers
                 return View();
             }
         }
+
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return RedirectToAction("Index", "Reservation");
+        }
+
         public ActionResult Profile()
         {
             return View();
