@@ -1,4 +1,5 @@
-﻿
+﻿@model List<GrandBlueResortandSpa.Models.BOOKING>
+
 @{
     ViewBag.Title = "Profile";
     Layout = null;
@@ -74,34 +75,36 @@
                                         <div class="table-responsive">
                                             <table class="table table-borderless">
                                                 <tbody>
-                                                    <tr>
-                                                        <td class="section">Name:</td>
-                                                        <td class="value">Otto</td>
-                                                    </tr>
+                                                   
+                                                        <tr>
+                                                            <td class="section">Name:</td>
+                                                            <td class="value">@TempData["memberName"]</td>
+                                                        </tr>
                                                     <tr>
                                                         <td class="section">Date of Birth:</td>
-                                                        <td class="value">10/11/1990</td>
+                                                        <td class="value">@TempData["memberDOB"]</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="section">Gender:</td>
-                                                        <td class="value">Male</td>
+                                                        <td class="value">@TempData["memberGender"]</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="section">Mobile:</td>
-                                                        <td class="value">01234567890</td>
+                                                        <td class="value">@TempData["memberMobile"]</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="section">Email:</td>
-                                                        <td class="value">O@gmail.com</td>
+                                                        <td class="value">@TempData["memberEmail"]</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="section">NID/Passport:</td>
-                                                        <td class="value">0000000000</td>
+                                                        <td class="value">@TempData["memberNID"]</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="section">Nationality:</td>
-                                                        <td class="value">Bangladesh</td>
+                                                        <td class="value">@TempData["memberNationality"]</td>
                                                     </tr>
+                                                    
                                                 </tbody>
                                             </table>
                                         </div>
@@ -123,24 +126,26 @@
                                                 <tbody>
                                                     <tr>
                                                         <td class="section">Member ID:</td>
-                                                        <td class="value">000000</td>
+                                                        <td class="value">@TempData["memberID"]</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="section">Times Visited:</td>
-                                                        <td class="value">10</td>
+                                                        <td class="value">@TempData["memberVisit"]</td>
                                                     </tr>
-                                                    <tr>
-                                                        <td class="section">Last room type:</td>
-                                                        <td class="value">Ocean Side Villa</td>
-                                                    </tr>
+                                                        @foreach (var item in Model) { 
+                                                        <tr>
+                                                            <td class="section">Last room type:</td>
+                                                            <td class="value">@item.selectedroom</td>
+                                                        </tr>
                                                     <tr>
                                                         <td class="section">Last Check in:</td>
-                                                        <td class="value">25/09/2021</td>
+                                                        <td class="value">@item.checkin</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="section">Last Check out:</td>
-                                                        <td class="value">28/09/2021</td>
+                                                        <td class="value">@item.checkout</td>
                                                     </tr>
+                                                    }
                                                 </tbody>
                                             </table>
                                         </div>
@@ -168,7 +173,7 @@
                                 Mobile
                             </label>
                         </div>
-                        <form action="" method="POST" class="phone box">
+                        <form action="/Login/updateContact" method="POST" class="phone box">
 
                             <div class="form-group mb-3">
                                 <!-- <label  class="text">Mobile Number</label> -->
@@ -195,7 +200,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="" method="POST" class="phone box">
+                        <form action="~/Login/ResetPass" method="POST" class="phone box">
 
                             <div class="form-group mb-3">
                                 <label class="txt">Current Password</label>

@@ -356,6 +356,7 @@
     <Content Include="Views\Reservation\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Login\Profile.cshtml" />
+    <Content Include="Views\Login\updateContact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
