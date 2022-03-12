@@ -39,7 +39,7 @@ namespace GrandBlueResortandSpa.Controllers
             if (checklogin != null)
             {
                 Session["email"] = checklogin.email;
-                Session["password"] = checklogin.password;
+                Session["password"] = checklogin.password.ToString();
                 //ViewBag.Login = "login check";
                 return RedirectToAction("Profile");
             }
@@ -136,7 +136,7 @@ namespace GrandBlueResortandSpa.Controllers
                 List<BOOKING> booking = grandBlue.BOOKINGs.Where(x => x.nationalId.Equals(member.nationalId)).OrderByDescending(x => x.bookid).Take(1).ToList();
 
                 int visitCount = grandBlue.BOOKINGs.Where(temp => temp.email.Equals(member.email)
-                                                  || temp.nationalId.Equals(member.nationalId)).Count();
+                                                  && temp.nationalId.Equals(member.nationalId)).Count();
                 TempData["memberVisit"] = visitCount;
 
 
@@ -155,35 +155,40 @@ namespace GrandBlueResortandSpa.Controllers
         public ActionResult ResetPass(string curpass, string newpass, string conpass)
         {
 
-            if (curpass == Session["password"])
+            if (Session["password"].Equals(curpass))
             {
                 if (newpass == conpass)
                 {
                     string userEmail = Session["email"].ToString();
                     MEMBER member = new MEMBER();
+
                     member = grandBlue.MEMBERs.SingleOrDefault(x => x.email.Equals(userEmail));
 
+                    if (member != null)
+                    {
 
-
-                    member.password = conpass;
-                    grandBlue.SaveChanges();
+                        member.password = newpass;
+                        grandBlue.SaveChanges();
+                    }
 
                     return RedirectToAction("Profile");
+                    //return Content("Successful");
+
                 }
                 else
                 {
                     ViewBag.msg = "Password does not match";
-                    return RedirectToAction("Profile");
+                    //return RedirectToAction("Profile");
+                    return Content("Password does not match");
                 }
 
             }
             else
             {
                 ViewBag.msg = "Incorrect Password";
-                return RedirectToAction("Profile");
+                //return RedirectToAction("Profile");
+                return Content("Incorrect Password");
             }
-
-
         }
 
 
