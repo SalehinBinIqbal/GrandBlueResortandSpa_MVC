@@ -11,13 +11,22 @@ namespace GrandBlueResortandSpa.Controllers
     {
         GrandBlueEntities grandBlue = new GrandBlueEntities();
         // GET: Admin
-        public ActionResult Index()
+        public ActionResult Index(BOOKING booking)
         {
-            return View();
+            List<BOOKING> bookingList = grandBlue.BOOKINGs.ToList();
+            return View(bookingList);
         }
 
         public ActionResult Members()
         {
+            List<MEMBER> memberList = grandBlue.MEMBERs.ToList();
+            return View(memberList);
+        }
+        [HttpPost]
+        public ActionResult Members(MEMBER members)
+        {
+            grandBlue.MEMBERs.Remove(members);
+            grandBlue.SaveChanges();
             return View();
         }
 

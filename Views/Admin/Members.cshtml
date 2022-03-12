@@ -1,4 +1,4 @@
-﻿
+﻿@model List<GrandBlueResortandSpa.Models.MEMBER>
 @{
     ViewBag.Title = "Members";
     Layout = null;
@@ -88,36 +88,32 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>mdo</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>mdo</td>
-                                <td>Mark</td>
-                                <td><button class="btn btn-danger">Delete</button></td>
-                            </tr>
-                            <tr>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>fat</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>fat</td>
-                                <td>Jacob</td>
-                                <td><button class="btn btn-danger">Delete</button></td>
-                            </tr>
+                            @foreach (var members in Model)
+                            {
+                                <form action="/" method="post">
+                                <tr>
+                                    <td>@members.name</td>
+                                    <td>@members.gender</td>
+                                    <td>@members.email</td>
+                                    <td>@members.mobile</td>
+                                    <td>@members.nationalId</td>
+                                    <td>@members.dob</td>
+                                    <td>@members.nationality</td>
+                                    <td><button type="submit" class="btn btn-danger">Delete</button></td>
+                                </tr>
+                               </form >
+                            }
+
                         </tbody>
                     </table>
                 </div>
             </div>
-    </div>
-    <div class="footer">
-        <p id="cpyrttext">
-            © Copyright 2021 GrandBlue Resort & Spa. | All Rights Reserved | Powered by ATR
-        </p>
-    </div>
+        </div>
+        <div class="footer">
+            <p id="cpyrttext">
+                © Copyright 2021 GrandBlue Resort & Spa. | All Rights Reserved | Powered by ATR
+            </p>
+        </div>
     </div>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="~/Scripts/bootstrap.bundle.min.js"></script>
