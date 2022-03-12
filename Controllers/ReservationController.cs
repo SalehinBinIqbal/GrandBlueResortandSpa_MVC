@@ -23,14 +23,11 @@ namespace GrandBlueResortandSpa.Controllers
         {
 
             bool memberExist = grandBlue.MEMBERs.Any(x => x.email.Equals(memberEmail) && x.password.Equals(memberPassword));
-            //MEMBER memberBook = grandBlue.MEMBERs.FirstOrDefault(x => x.email.Equals(memberEmail) && x.password.Equals(memberPassword));
-
 
             if (memberExist)
             {
                 Session["flag"] = 1;
-                //TempData["flag"] = true;
-                //List<MEMBER> memberBook = grandBlue.MEMBERs.Where(x => x.email.Equals(memberEmail) && x.password.Equals(memberPassword)).ToList();
+
                 MEMBER memberBook = new MEMBER();
                 memberBook = grandBlue.MEMBERs.SingleOrDefault(x => x.email.Equals(memberEmail) && x.password.Equals(memberPassword));
                 TempData["memName"] = memberBook.name;
@@ -48,8 +45,7 @@ namespace GrandBlueResortandSpa.Controllers
             }
             else
             {
-                ViewBag.state = 0;
-                return Content("Fetching failed");
+                return Content("Member Does not exist");
             }
         }
 
@@ -99,7 +95,7 @@ namespace GrandBlueResortandSpa.Controllers
                 grandBlue.SaveChanges();
 
                 return RedirectToAction("Index");
-                //return Content(memName + memGender + memEmail + memMobile + memNID + memDOB + memNationality);
+
             }
 
             else
