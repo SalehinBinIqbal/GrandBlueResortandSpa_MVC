@@ -89,8 +89,7 @@
                         </thead>
                         <tbody>
                             @foreach (var members in Model)
-                            {
-                                <form action="/" method="post">
+                            {   
                                 <tr>
                                     <td>@members.name</td>
                                     <td>@members.gender</td>
@@ -99,9 +98,8 @@
                                     <td>@members.nationalId</td>
                                     <td>@members.dob</td>
                                     <td>@members.nationality</td>
-                                    <td><button type="submit" class="btn btn-danger">Delete</button></td>
+                                    <td><input name="delete" type="submit" value="Delete" class="btn btn-outline-primary bookheading" id="sbmt" /></td>
                                 </tr>
-                               </form >
                             }
 
                         </tbody>
