@@ -1,0 +1,126 @@
+﻿@{
+    ViewBag.Title = "UpdateRooms";
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/facilities.css">
+    <title>Admin Panel</title>
+</head>
+<body>
+    <div>
+        <div>
+            <nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top">
+                <div class="container-fluid">
+                    <div class="text-center">
+                        <img src="~/Content/images/commonimages/Logo.png" width="40px" alt="">
+                        <p id="subheading">Resort & Spa</p>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvasNavbar"
+                         aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Admin Panel</h5>
+                            <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                <li class="nav-item">
+                                    <a class="nav-link active navtext" href="@Url.Action("Index", "Admin")">Home</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active navtext" href="@Url.Action("Members", "Admin")">Members</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link navtext" aria-current="page" href="@Url.Action("UpdateRooms", "Admin")">Update Rooms</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                            </ul>
+                            <a href="">
+                                <button id="logoutbtn" name="logout" type="button" class="btn btn-danger navtext">
+                                    Logout <i class="fa fa-sign-out"></i>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="maincontent">
+            <div class="text-center">
+                <h2 class="navtext">
+                    Update Rooms
+                </h2>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Room Name</th>
+                                <th scope="col">Input</th>
+                                <th scope="col">Update</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ocean Side Villa</td>
+                                <td><input class="form-control" type="text" aria-label="default input example"></td>
+                                <td><button class="btn btn-secondary">Update</button></td>
+                            </tr>
+                            <tr>
+                                <td>Family Villa</td>
+                                <td><input class="form-control" type="text" aria-label="default input example"></td>
+                                <td><button class="btn btn-secondary">Update</button></td>
+                            </tr>
+                            <tr>
+                                <td>Deluxe Suite</td>
+                                <td><input class="form-control" type="text" aria-label="default input example"></td>
+                                <td><button class="btn btn-secondary">Update</button></td>
+                            </tr>
+                            <tr>
+                                <td>Premium Suite</td>
+                                <td><input class="form-control" type="text" aria-label="default input example"></td>
+                                <td><button class="btn btn-secondary">Update</button></td>
+                            </tr>
+                            <tr>
+                                <td>Ocean Side Room</td>
+                                <td><input class="form-control" type="text" aria-label="default input example"></td>
+                                <td><button class="btn btn-secondary">Update</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+        <p id="cpyrttext">
+            © Copyright 2021 GrandBlue Resort & Spa. | All Rights Reserved | Powered by ATR
+        </p>
+    </div>
+    </div>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
