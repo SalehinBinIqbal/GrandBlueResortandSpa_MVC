@@ -128,7 +128,13 @@ namespace GrandBlueResortandSpa.Controllers
                     TempData["memberNationality"] = member.nationality;
                     TempData["memberPassword"] = member.password;
                 }
-             
+                //Update in book table
+                //BOOKING book = (BOOKING)grandBlue.BOOKINGs.Where(temp => temp.email.Equals(member.email) && temp.nationalId.Equals(member.nationalId));
+
+                //if (book != null)
+                //{
+                //  book.mobile = phone;
+                //}
 
                 List<BOOKING> booking = grandBlue.BOOKINGs.Where(x => x.nationalId.Equals(member.nationalId)).OrderByDescending(x => x.bookid).Take(1).ToList();
 
@@ -136,8 +142,8 @@ namespace GrandBlueResortandSpa.Controllers
                                                   && temp.nationalId.Equals(member.nationalId)).Count();
                 TempData["memberVisit"] = visitCount;
 
-
-   
+                TempData["contactUpdate"] = "1";
+                //return View(booking);
                 return RedirectToAction("Profile");
 
 
@@ -166,23 +172,28 @@ namespace GrandBlueResortandSpa.Controllers
 
                         member.password = newpass;
                         grandBlue.SaveChanges();
+                        TempData["passwordUpdated"] = "1";
                     }
 
                     return RedirectToAction("Profile");
-
+                    //return Content("Successful");
 
                 }
                 else
                 {
                     ViewBag.msg = "Password does not match";
-                    return Content("Password does not match");
+                    TempData["missMatch"] = "Password Missmatch";
+                    return RedirectToAction("Profile");
+                    //return Content("Password does not match");
                 }
 
             }
             else
             {
+                TempData["ResetPassFlag"] = "Incorrect Password";
                 ViewBag.msg = "Incorrect Password";
-                return Content("Incorrect Password");
+                return RedirectToAction("Profile");
+                //return Content("Incorrect Password");
             }
         }
 
