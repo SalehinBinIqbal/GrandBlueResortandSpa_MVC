@@ -28,8 +28,6 @@ namespace GrandBlueResortandSpa.Controllers
         [HttpPost]
         public ActionResult Index(MEMBER member, ADMIN admin)
         {
-            //var loggedin = false;
-
             if (Session["email"] == null)
             {
                 ViewBag.Email = "Member already logged in";
@@ -41,19 +39,16 @@ namespace GrandBlueResortandSpa.Controllers
             {
                 Session["email"] = checklogin.email;
                 Session["password"] = checklogin.password.ToString();
-                //ViewBag.Login = "login check";
                 return RedirectToAction("Profile");
             }
             else if(checkAdminLogin != null)
             {
                 Session["email"] = checkAdminLogin.email;
-                //ViewBag.Login = "login check";
                 return RedirectToAction("Index", "Admin");
             }
             else
             {
                 TempData["message"] = "Email or Password does not match! Try again.";
-                //ViewBag.Notification = "Wrong Email or password";
                 return View();
             }
         }
@@ -75,7 +70,6 @@ namespace GrandBlueResortandSpa.Controllers
                 string userEmail = Session["email"].ToString();
                 MEMBER member = new MEMBER();
 
-                //List<MEMBER> members = grandBlue.MEMBERs.Where(x => x.email.Equals(userEmail)).ToList();
                 member = grandBlue.MEMBERs.SingleOrDefault(x => x.email.Equals(userEmail));
 
                 if (member != null)
@@ -134,13 +128,7 @@ namespace GrandBlueResortandSpa.Controllers
                     TempData["memberNationality"] = member.nationality;
                     TempData["memberPassword"] = member.password;
                 }
-                //Update in book table
-                //BOOKING book = (BOOKING)grandBlue.BOOKINGs.Where(temp => temp.email.Equals(member.email) && temp.nationalId.Equals(member.nationalId));
-
-                //if (book != null)
-                //{
-                //  book.mobile = phone;
-                //}
+             
 
                 List<BOOKING> booking = grandBlue.BOOKINGs.Where(x => x.nationalId.Equals(member.nationalId)).OrderByDescending(x => x.bookid).Take(1).ToList();
 
@@ -149,7 +137,7 @@ namespace GrandBlueResortandSpa.Controllers
                 TempData["memberVisit"] = visitCount;
 
 
-                //return View(booking);
+   
                 return RedirectToAction("Profile");
 
 
@@ -181,13 +169,12 @@ namespace GrandBlueResortandSpa.Controllers
                     }
 
                     return RedirectToAction("Profile");
-                    //return Content("Successful");
+
 
                 }
                 else
                 {
                     ViewBag.msg = "Password does not match";
-                    //return RedirectToAction("Profile");
                     return Content("Password does not match");
                 }
 
@@ -195,7 +182,6 @@ namespace GrandBlueResortandSpa.Controllers
             else
             {
                 ViewBag.msg = "Incorrect Password";
-                //return RedirectToAction("Profile");
                 return Content("Incorrect Password");
             }
         }
