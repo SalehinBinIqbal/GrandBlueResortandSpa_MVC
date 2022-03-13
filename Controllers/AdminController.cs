@@ -11,23 +11,44 @@ namespace GrandBlueResortandSpa.Controllers
     {
         GrandBlueEntities grandBlue = new GrandBlueEntities();
         // GET: Admin
-        public ActionResult Index(BOOKING booking)
+        public ActionResult Index()
         {
-            List<BOOKING> bookingList = grandBlue.BOOKINGs.ToList();
-            return View(bookingList);
+            if (Session["email"] == null)
+            {
+                if (TempData["message"] != null)
+                {
+                    ViewBag.Message = TempData["msg"].ToString();
+                }
+                return RedirectToAction("Index", "Login");
+            }
+            else
+            {
+                List<BOOKING> bookingList = grandBlue.BOOKINGs.ToList();
+                return View(bookingList);
+            }
+   
         }
 
         public ActionResult Members()
         {
-            List<MEMBER> memberList = grandBlue.MEMBERs.ToList();
-            return View(memberList);
+            if (Session["email"] == null)
+            {
+                if (TempData["message"] != null)
+                {
+                    ViewBag.Message = TempData["msg"].ToString();
+                }
+                return RedirectToAction("Index", "Login");
+            }
+            else
+            {
+                List<MEMBER> memberList = grandBlue.MEMBERs.ToList();
+                return View(memberList);
+            }
+            
         }
         public ActionResult Delete(string email)
         {
-            //List<MEMBER> memberList = grandBlue.MEMBERs.ToList();
-            //System.Diagnostics.Debug.WriteLine(email);
             MEMBER member = grandBlue.MEMBERs.Where(temp => temp.email == email).SingleOrDefault();
-            //System.Diagnostics.Debug.WriteLine(member.mobile);
             grandBlue.MEMBERs.Remove(member);
             grandBlue.SaveChanges();
             return RedirectToAction("Members", "Admin");
@@ -35,10 +56,67 @@ namespace GrandBlueResortandSpa.Controllers
 
         public ActionResult UpdateRooms()
         {
-            //grandBlue.Entry(member).State = System.Data.Entity.EntityState.Modified;
-            //grandBlue.SaveChanges();
-            return View();
+            if (Session["email"] == null)
+            {
+                if (TempData["message"] != null)
+                {
+                    ViewBag.Message = TempData["msg"].ToString();
+                }
+                return RedirectToAction("Index", "Login");
+            }
+            else
+            {
+                List<ROOM> roomList = grandBlue.ROOMs.ToList();
+                return View(roomList);
+            }
         }
+
+        public ActionResult Updateosv(ROOM roomosv)
+        {
+            ROOM room = grandBlue.ROOMs.SingleOrDefault();
+            System.Diagnostics.Debug.WriteLine(roomosv.osv);
+            room.osv = roomosv.osv;
+            grandBlue.Entry(room).State = System.Data.Entity.EntityState.Modified;
+            grandBlue.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult Updateofv(ROOM roomfv)
+        {
+            ROOM room = grandBlue.ROOMs.SingleOrDefault();
+            System.Diagnostics.Debug.WriteLine(roomfv.osv);
+            room.osv = roomfv.osv;
+            grandBlue.Entry(room).State = System.Data.Entity.EntityState.Modified;
+            grandBlue.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult Updateds(ROOM roomds)
+        {
+            ROOM room = grandBlue.ROOMs.SingleOrDefault();
+            System.Diagnostics.Debug.WriteLine(roomds.osv);
+            room.osv = roomds.osv;
+            grandBlue.Entry(room).State = System.Data.Entity.EntityState.Modified;
+            grandBlue.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult Updateps(ROOM roomps)
+        {
+            ROOM room = grandBlue.ROOMs.SingleOrDefault();
+            System.Diagnostics.Debug.WriteLine(roomps.osv);
+            room.osv = roomps.osv;
+            grandBlue.Entry(room).State = System.Data.Entity.EntityState.Modified;
+            grandBlue.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult Updateosr(ROOM roomosr)
+        {
+            ROOM room = grandBlue.ROOMs.SingleOrDefault();
+            System.Diagnostics.Debug.WriteLine(roomosr.osv);
+            room.osv = roomosr.osv;
+            grandBlue.Entry(room).State = System.Data.Entity.EntityState.Modified;
+            grandBlue.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
 
         public ActionResult Logout()
         {

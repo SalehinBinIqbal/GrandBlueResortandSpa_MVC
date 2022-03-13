@@ -66,9 +66,11 @@ namespace GrandBlueResortandSpa.Controllers
 
         public ActionResult Profile()
         {
-
-
-            if (Session["email"] != null)
+            if (Session["email"] == null)
+            {
+                return RedirectToAction("Index", "Login");
+            }
+            else if (Session["email"] != null)
             {
                 string userEmail = Session["email"].ToString();
                 MEMBER member = new MEMBER();

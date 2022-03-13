@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<GrandBlueResortandSpa.Models.ROOM>
+@{
     ViewBag.Title = "UpdateRooms";
     Layout = null;
 }
@@ -83,44 +84,109 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Ocean Side Villa</td>
-                                <td><input class="form-control" type="text" aria-label="default input example"></td>
-                                <td><button class="btn btn-secondary">Update</button></td>
+
+                                @foreach (var empty in Model)
+                                { 
+                                    <form action="../Admin/Updateosv" method="post">
+                                    <td>Ocean Side Villa</td>
+                                    <td><input name="osv" class="form-control" type="text" value="@empty.osv" aria-label="default input example"></td>
+                                    <td>
+                                        @*<a href="/Admin/Updateosv?osv1=@empty.osv">*@
+                                            <button id="" name="" type="submit" class="btn btn-secondary navtext">
+                                                Update
+                                            </button>
+                                        @*</a>*@
+                                    </td>
+                                    </form>
+                                }
+
                             </tr>
                             <tr>
-                                <td>Family Villa</td>
-                                <td><input class="form-control" type="text" aria-label="default input example"></td>
-                                <td><button class="btn btn-secondary">Update</button></td>
+
+                                @foreach (var empty in Model)
+                                {
+                                    <form action="../Admin/Updatefv" method="post">
+                                    <td>Family Villa</td>
+                                    <td><input name="fv" class="form-control" type="text" value="@empty.fv" aria-label="default input example"></td>
+                                    <td>
+                                        @*<a href="/Admin/Updateosv?osv1=@empty.osv">*@
+                                        <button id="" name="" type="submit" class="btn btn-secondary navtext">
+                                            Update
+                                        </button>
+                                        @*</a>*@
+                                    </td>
+                                    </form>
+                                }
+
                             </tr>
                             <tr>
-                                <td>Deluxe Suite</td>
-                                <td><input class="form-control" type="text" aria-label="default input example"></td>
-                                <td><button class="btn btn-secondary">Update</button></td>
+
+                                @foreach (var empty in Model)
+                                {
+                                    <form action="../Admin/Updateds" method="post">
+                                    <td>Deluxe Suite</td>
+                                    <td><input name="ds" class="form-control" type="text" value="@empty.ds" aria-label="default input example"></td>
+                                    <td>
+                                        @*<a href="/Admin/Updateosv?osv1=@empty.osv">*@
+                                        <button id="" name="" type="submit" class="btn btn-secondary navtext">
+                                            Update
+                                        </button>
+                                        @*</a>*@
+                                    </td>
+                                    </form>
+                                }
+
                             </tr>
                             <tr>
-                                <td>Premium Suite</td>
-                                <td><input class="form-control" type="text" aria-label="default input example"></td>
-                                <td><button class="btn btn-secondary">Update</button></td>
+
+                                @foreach (var empty in Model)
+                                {
+                                    <form action="../Admin/Updateps" method="post">
+                                    <td>Premium Suite</td>
+                                    <td><input name="osv" class="form-control" type="text" value="@empty.ps" aria-label="default input example"></td>
+                                    <td>
+                                        @*<a href="/Admin/Updateosv?osv1=@empty.osv">*@
+                                        <button id="" name="" type="submit" class="btn btn-secondary navtext">
+                                            Update
+                                        </button>
+                                        @*</a>*@
+                                    </td>
+                                    </form>
+                                }
+
                             </tr>
                             <tr>
-                                <td>Ocean Side Room</td>
-                                <td><input class="form-control" type="text" aria-label="default input example"></td>
-                                <td><button class="btn btn-secondary">Update</button></td>
+
+                                @foreach (var empty in Model)
+                                {
+                                    <form action="../Admin/Updateosr" method="post">
+                                    <td>Ocean Side Room</td>
+                                    <td><input name="osr" class="form-control" type="text" value="@empty.osr" aria-label="default input example"></td>
+                                    <td>
+                                        @*<a href="/Admin/Updateosv?osv1=@empty.osv">*@
+                                        <button id="" name="" type="submit" class="btn btn-secondary navtext">
+                                            Update
+                                        </button>
+                                        @*</a>*@
+                                    </td>
+                                    </form>
+                                }
+
                             </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-    </div>
-    <div class="footer">
-        <p id="cpyrttext">
-            © Copyright 2021 GrandBlue Resort & Spa. | All Rights Reserved | Powered by ATR
-        </p>
-    </div>
-    </div>
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer">
+                                <p id="cpyrttext">
+                                    © Copyright 2021 GrandBlue Resort & Spa. | All Rights Reserved | Powered by ATR
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Option 1: Bootstrap Bundle with Popper -->
+                        <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+                    </body>
+                </html>
 
 

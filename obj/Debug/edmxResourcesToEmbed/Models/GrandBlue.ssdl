@@ -48,10 +48,22 @@
     <Property Name="nationality" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="password" Type="varchar" MaxLength="20" Nullable="false" />
   </EntityType>
+  <EntityType Name="ROOM">
+    <Key>
+      <PropertyRef Name="RoomId" />
+    </Key>
+    <Property Name="RoomId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="osv" Type="int" Nullable="false" />
+    <Property Name="fv" Type="int" Nullable="false" />
+    <Property Name="ds" Type="int" Nullable="false" />
+    <Property Name="ps" Type="int" Nullable="false" />
+    <Property Name="osr" Type="int" Nullable="false" />
+  </EntityType>
   <EntityContainer Name="GrandBlueModelStoreContainer">
     <EntitySet Name="ADMIN" EntityType="Self.ADMIN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BOOKING" EntityType="Self.BOOKING" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CONTACT" EntityType="Self.CONTACT" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MEMBER" EntityType="Self.MEMBER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ROOM" EntityType="Self.ROOM" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

@@ -38,6 +38,7 @@ namespace GrandBlueResortandSpa.Controllers
         {
             return View();
         }
+       
 
         public ActionResult Dine()
         {

@@ -1,6 +1,7 @@
 ﻿using GrandBlueResortandSpa.Models;
 using System.Linq;
 using System.Web.Mvc;
+using System.Collections.Generic;
 
 namespace GrandBlueResortandSpa.Controllers
 {
@@ -10,7 +11,8 @@ namespace GrandBlueResortandSpa.Controllers
         // GET: Reservation
         public ActionResult Index()
         {
-            return View();
+            List <ROOM> roomList = grandBlue.ROOMs.ToList();
+            return View(roomList);
         }
         public ActionResult Book()
         {

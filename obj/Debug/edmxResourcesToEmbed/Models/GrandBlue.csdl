@@ -53,5 +53,17 @@
     <EntitySet Name="BOOKINGs" EntityType="Self.BOOKING" />
     <EntitySet Name="CONTACTs" EntityType="Self.CONTACT" />
     <EntitySet Name="MEMBERs" EntityType="Self.MEMBER" />
+    <EntitySet Name="ROOMs" EntityType="GrandBlueModel.ROOM" />
   </EntityContainer>
+  <EntityType Name="ROOM">
+    <Key>
+      <PropertyRef Name="RoomId" />
+    </Key>
+    <Property Name="RoomId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="osv" Type="Int32" Nullable="false" />
+    <Property Name="fv" Type="Int32" Nullable="false" />
+    <Property Name="ds" Type="Int32" Nullable="false" />
+    <Property Name="ps" Type="Int32" Nullable="false" />
+    <Property Name="osr" Type="Int32" Nullable="false" />
+  </EntityType>
 </Schema>

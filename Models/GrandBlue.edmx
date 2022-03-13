@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="GrandBlueModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="GrandBlueModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ADMIN">
           <Key>
             <PropertyRef Name="AdminId" />
@@ -53,14 +53,25 @@
           <Property Name="nationality" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="password" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
+        <EntityType Name="ROOM">
+          <Key>
+            <PropertyRef Name="RoomId" />
+          </Key>
+          <Property Name="RoomId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="osv" Type="int" Nullable="false" />
+          <Property Name="fv" Type="int" Nullable="false" />
+          <Property Name="ds" Type="int" Nullable="false" />
+          <Property Name="ps" Type="int" Nullable="false" />
+          <Property Name="osr" Type="int" Nullable="false" />
+        </EntityType>
         <EntityContainer Name="GrandBlueModelStoreContainer">
           <EntitySet Name="ADMIN" EntityType="Self.ADMIN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BOOKING" EntityType="Self.BOOKING" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CONTACT" EntityType="Self.CONTACT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MEMBER" EntityType="Self.MEMBER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ROOM" EntityType="Self.ROOM" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GrandBlueModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -117,7 +128,19 @@
           <EntitySet Name="BOOKINGs" EntityType="Self.BOOKING" />
           <EntitySet Name="CONTACTs" EntityType="Self.CONTACT" />
           <EntitySet Name="MEMBERs" EntityType="Self.MEMBER" />
+          <EntitySet Name="ROOMs" EntityType="GrandBlueModel.ROOM" />
         </EntityContainer>
+        <EntityType Name="ROOM">
+          <Key>
+            <PropertyRef Name="RoomId" />
+          </Key>
+          <Property Name="RoomId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="osv" Type="Int32" Nullable="false" />
+          <Property Name="fv" Type="Int32" Nullable="false" />
+          <Property Name="ds" Type="Int32" Nullable="false" />
+          <Property Name="ps" Type="Int32" Nullable="false" />
+          <Property Name="osr" Type="Int32" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -173,6 +196,18 @@
                 <ScalarProperty Name="dob" ColumnName="dob" />
                 <ScalarProperty Name="nationality" ColumnName="nationality" />
                 <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROOMs">
+            <EntityTypeMapping TypeName="GrandBlueModel.ROOM">
+              <MappingFragment StoreEntitySet="ROOM">
+                <ScalarProperty Name="osr" ColumnName="osr" />
+                <ScalarProperty Name="ps" ColumnName="ps" />
+                <ScalarProperty Name="ds" ColumnName="ds" />
+                <ScalarProperty Name="fv" ColumnName="fv" />
+                <ScalarProperty Name="osv" ColumnName="osv" />
+                <ScalarProperty Name="RoomId" ColumnName="RoomId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

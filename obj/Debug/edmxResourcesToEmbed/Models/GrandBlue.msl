@@ -53,5 +53,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ROOMs">
+      <EntityTypeMapping TypeName="GrandBlueModel.ROOM">
+        <MappingFragment StoreEntitySet="ROOM">
+          <ScalarProperty Name="osr" ColumnName="osr" />
+          <ScalarProperty Name="ps" ColumnName="ps" />
+          <ScalarProperty Name="ds" ColumnName="ds" />
+          <ScalarProperty Name="fv" ColumnName="fv" />
+          <ScalarProperty Name="osv" ColumnName="osv" />
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

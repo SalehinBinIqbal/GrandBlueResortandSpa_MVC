@@ -1,4 +1,4 @@
-﻿
+﻿@model List<GrandBlueResortandSpa.Models.ROOM>
 @{
     ViewBag.Title = "Index";
     Layout = null;
@@ -107,7 +107,7 @@
                                                     <div class="input-group">
                                                         <input type="text" autocomplete="off" id="checkin" name="checkin" value="" placeholder="MM/DD/YYYY" class="form-control frmdd datepicker" required>
                                                         <span class="input-group-text"><i class="fa fa-calendar"></i></span>
-                                                        
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -119,7 +119,7 @@
                                                     <div class="input-group">
                                                         <input type="text" autocomplete="off" id="checkout" name="checkout" value="" placeholder="MM/DD/YYYY" class="form-control frmdd datepicker" required>
                                                         <span class="input-group-text"><i class="fa fa-calendar"></i></span>
-                                                        
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -138,27 +138,32 @@
             </div>
             <div class="rooms">
                 <div class="container">
+                    
                     <div class="row individual-room">
                         <div class="col-md-12">
                             <div class="room-info">
                                 <div class="card">
                                     <div class="row">
                                         <div class="col-md-5">
-                           `                 <img src="~/Content/images/Rooms & Suites/OceanSideVilla/Villa.png" class="card-img-top" alt="...">
+                                            <img src="~/Content/images/Rooms & Suites/OceanSideVilla/Villa.png" class="card-img-top" alt="...">
                                         </div>
                                         <div class="col-md-7">
                                             <div class="card-body">
-                                                <h5 class="card-title">Ocean Side Villa</h5>       
+                                                <h5 class="card-title">Ocean Side Villa</h5>
                                                 <p class="card-text">Closest to the beach, the 150sqm Ocean Front Pool Villas are the epitome of luxury and elegance. A spacious living room leads on to the private pool. Down pillows, Irish linen and the world’s best bed ensure a good night’s sleep.</p>
+                                                @foreach (var room in Model)
+                                                {
                                                 <tbody>
-                                                    <tr>
-                                                        <td class="txt">Available:</td>
-                                                        <td class="txt">5</td>
-                                                    </tr>
-                                                </tbody>
-                                                
-                                                <div class="card-footer">
                                                     
+                                                        <tr>
+                                                            <td class="txt">Available:</td>
+                                                            <td>@room.osv</td>
+                                                        </tr>
+                                                    
+                                                 </tbody>
+                                                }
+                                                <div class="card-footer">
+
                                                     <script>
                                                         function passValuesOSV() {
                                                             var checkin = document.getElementById("checkin").value;
@@ -180,6 +185,7 @@
                             </div>
                         </div>
                     </div>
+                    
 
                     <div class="row individual-room">
                         <div class="col-md-12">
@@ -191,17 +197,22 @@
                                         </div>
                                         <div class="col-md-7">
                                             <div class="card-body">
-                                                <h5 class="card-title">Family Villa</h5> 
+                                                <h5 class="card-title">Family Villa</h5>
                                                 <p class="card-text">The Family Villas are luxurious 267sqm holiday homes for families or small groups. These two-story, three bedroom villas feature a living room, kitchenette, four bathrooms, two balconies with panoramic garden views. There’s also a terrace with BBQ grill and a large private pool. </p>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="txt">Available:</td>
-                                                        <td class="txt">5</td>
-                                                    </tr>
-                                                </tbody>
-                                                
+                                                @foreach (var room in Model)
+                                                {
+                                                    <tbody>
+
+                                                        <tr>
+                                                            <td class="txt">Available:</td>
+                                                            <td>@room.fv</td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                }
+
                                                 <div class="card-footer">
-                                                    
+
                                                     <script>
                                                         function passValuesFV() {
                                                             var checkin = document.getElementById("checkin").value;
@@ -235,13 +246,18 @@
                                             <div class="card-body">
                                                 <h5 class="card-title">Deluxe Suite</h5>
                                                 <p class="card-text">The 79 sqm Deluxe Suite comes with a private balcony and offers a magnificent vista across the bay while reflecting the resort’s signature design. A spacious stone-lined en suite bathroom with sunken bathtub and a rain-shower adds to the luxury experience.</p>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="txt">Available:</td>
-                                                        <td class="txt">5</td>
-                                                    </tr>
-                                                </tbody>
-                                                
+                                                @foreach (var room in Model)
+                                                {
+                                                    <tbody>
+
+                                                        <tr>
+                                                            <td class="txt">Available:</td>
+                                                            <td>@room.ds</td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                }
+
                                                 <div class="card-footer">
                                                     <script>
                                                         function passValuesDS() {
@@ -275,13 +291,18 @@
                                             <div class="card-body">
                                                 <h5 class="card-title">Premium Suite</h5>
                                                 <p class="card-text">The Premium Suite is the epitome of luxury and elegance. Featuring a spacious bedroom, large living and dressing areas, an en suite stone-lined bathroom with bathtub and rain shower, plus a private balcony with views over the sea to the horizon. These 128sqm suites are the ideal choice for the discerning traveler.</p>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="txt">Available:</td>
-                                                        <td class="txt">5</td>
-                                                    </tr>
-                                                </tbody>
-                                                
+                                                @foreach (var room in Model)
+                                                {
+                                                    <tbody>
+
+                                                        <tr>
+                                                            <td class="txt">Available:</td>
+                                                            <td>@room.ps</td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                }
+
                                                 <div class="card-footer">
                                                     <script>
                                                         function passValuesPS() {
@@ -315,16 +336,20 @@
                                             <div class="card-body">
                                                 <h5 class="card-title">Ocean Side Room</h5>
                                                 <p class="card-text">Being located closest to the Resort’s private beach, the Ocean Side Rooms offer panoramic vistas of the Ocean. You will find yourself observing the sunrise in the early morning while having breakfast served on the private veranda. As part of The GrandBlue's concept, the rooms reflect the signature design of old world charm and elegance complemented with premium luxury standards.</p>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="txt">Available:</td>
-                                                        <td class="txt">5</td>
-                                                        
-                                                    </tr>
-                                                </tbody>
-                                                
+                                                @foreach (var room in Model)
+                                                {
+                                                    <tbody>
+
+                                                        <tr>
+                                                            <td class="txt">Available:</td>
+                                                            <td>@room.osr</td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                }
+
                                                 <div class="card-footer">
-                                                    
+
                                                     <script>
                                                         function passValuesOSR() {
                                                             var checkin = document.getElementById("checkin").value;
@@ -358,9 +383,9 @@
     <script src="~/Scripts/jquery-1.12.4.js"></script>
     <script src="~/Scripts/jquery-ui.js"></script>
     <script>
-        $( function() {
-            $( ".datepicker" ).datepicker();
-        } );
+        $(function () {
+            $(".datepicker").datepicker();
+        });
     </script>
 </body>
 

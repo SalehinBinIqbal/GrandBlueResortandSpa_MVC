@@ -29,5 +29,6 @@ namespace GrandBlueResortandSpa.Models
         public virtual DbSet<BOOKING> BOOKINGs { get; set; }
         public virtual DbSet<CONTACT> CONTACTs { get; set; }
         public virtual DbSet<MEMBER> MEMBERs { get; set; }
+        public virtual DbSet<ROOM> ROOMs { get; set; }
     }
 }
