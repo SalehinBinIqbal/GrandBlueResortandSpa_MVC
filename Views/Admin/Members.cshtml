@@ -74,36 +74,44 @@
                     Members
                 </h2>
                 <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Gender</th>
-                                <th scope="col">E-mail</th>
-                                <th scope="col">Mobile</th>
-                                <th scope="col">NID/Passport</th>
-                                <th scope="col">DOB</th>
-                                <th scope="col">Nationality</th>
-                                <th scope="col">Remove</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var members in Model)
-                            {   
+                    <form action="/" method="post">
+                        <table class="table table-hover">
+                            <thead>
                                 <tr>
-                                    <td>@members.name</td>
-                                    <td>@members.gender</td>
-                                    <td>@members.email</td>
-                                    <td>@members.mobile</td>
-                                    <td>@members.nationalId</td>
-                                    <td>@members.dob</td>
-                                    <td>@members.nationality</td>
-                                    <td><input name="delete" type="submit" value="Delete" class="btn btn-outline-primary bookheading" id="sbmt" /></td>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Gender</th>
+                                    <th scope="col">E-mail</th>
+                                    <th scope="col">Mobile</th>
+                                    <th scope="col">NID/Passport</th>
+                                    <th scope="col">DOB</th>
+                                    <th scope="col">Nationality</th>
+                                    <th scope="col">Remove</th>
                                 </tr>
-                            }
+                            </thead>
+                            <tbody>
+                                @foreach (var members in Model)
+                                {
+                                    <tr>
+                                        <td>@members.name</td>
+                                        <td>@members.gender</td>
+                                        <td>@members.email</td>
+                                        <td>@members.mobile</td>
+                                        <td>@members.nationalId</td>
+                                        <td>@members.dob</td>
+                                        <td>@members.nationality</td>
+                                        <td>
+                                            <a href="/Admin/Delete?email=@members.email">
+                                                <button id="" name="Delete" type="button" class="btn btn-danger navtext">
+                                                    Delete 
+                                                </button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </form>
                 </div>
             </div>
         </div>

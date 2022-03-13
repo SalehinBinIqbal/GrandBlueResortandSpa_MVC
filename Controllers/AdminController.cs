@@ -22,16 +22,21 @@ namespace GrandBlueResortandSpa.Controllers
             List<MEMBER> memberList = grandBlue.MEMBERs.ToList();
             return View(memberList);
         }
-        [HttpPost]
-        public ActionResult Members(MEMBER members)
+        public ActionResult Delete(string email)
         {
-            grandBlue.MEMBERs.Remove(members);
+            //List<MEMBER> memberList = grandBlue.MEMBERs.ToList();
+            //System.Diagnostics.Debug.WriteLine(email);
+            MEMBER member = grandBlue.MEMBERs.Where(temp => temp.email == email).SingleOrDefault();
+            //System.Diagnostics.Debug.WriteLine(member.mobile);
+            grandBlue.MEMBERs.Remove(member);
             grandBlue.SaveChanges();
-            return View();
+            return RedirectToAction("Members", "Admin");
         }
 
         public ActionResult UpdateRooms()
         {
+            //grandBlue.Entry(member).State = System.Data.Entity.EntityState.Modified;
+            //grandBlue.SaveChanges();
             return View();
         }
 
