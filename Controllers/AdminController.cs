@@ -15,10 +15,6 @@ namespace GrandBlueResortandSpa.Controllers
         {
             if (Session["email"] == null)
             {
-                if (TempData["message"] != null)
-                {
-                    ViewBag.Message = TempData["msg"].ToString();
-                }
                 return RedirectToAction("Index", "Login");
             }
             else
@@ -33,10 +29,6 @@ namespace GrandBlueResortandSpa.Controllers
         {
             if (Session["email"] == null)
             {
-                if (TempData["message"] != null)
-                {
-                    ViewBag.Message = TempData["msg"].ToString();
-                }
                 return RedirectToAction("Index", "Login");
             }
             else
@@ -58,10 +50,6 @@ namespace GrandBlueResortandSpa.Controllers
         {
             if (Session["email"] == null)
             {
-                if (TempData["message"] != null)
-                {
-                    ViewBag.Message = TempData["msg"].ToString();
-                }
                 return RedirectToAction("Index", "Login");
             }
             else
