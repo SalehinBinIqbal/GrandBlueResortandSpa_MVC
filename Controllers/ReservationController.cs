@@ -94,7 +94,7 @@ namespace GrandBlueResortandSpa.Controllers
                 grandBlue.BOOKINGs.Add(booking);
                 grandBlue.SaveChanges();
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
 
             }
 

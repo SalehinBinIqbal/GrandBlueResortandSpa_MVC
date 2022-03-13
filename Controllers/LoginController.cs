@@ -140,8 +140,8 @@ namespace GrandBlueResortandSpa.Controllers
                 TempData["memberVisit"] = visitCount;
 
 
-                return View(booking);
-                //return RedirectToAction("Profile");
+                //return View(booking);
+                return RedirectToAction("Profile");
 
 
             }
