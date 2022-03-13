@@ -47,7 +47,9 @@ namespace GrandBlueResortandSpa.Controllers
             }
             else
             {
-                return Content("Member Does not exist");
+                TempData["Failed"] = "Member Not Found";
+                return RedirectToAction("Book");
+                //return Content("Member Does not exist");
             }
         }
 
@@ -96,7 +98,10 @@ namespace GrandBlueResortandSpa.Controllers
                 grandBlue.BOOKINGs.Add(booking);
                 grandBlue.SaveChanges();
 
-                return RedirectToAction("Index", "Home");
+
+                Session.Clear();
+                //TempData["Booked"] = "Successfully Booked";
+                return RedirectToAction("Index");
 
             }
 
@@ -137,10 +142,12 @@ namespace GrandBlueResortandSpa.Controllers
                     grandBlue.SaveChanges();
                 }
 
+                Session.Clear();
+                //TempData["Booked"] = "Successfully Booked";
                 return RedirectToAction("Index");
-                //return Content("Failed");
-                //return View();
+
             }
+
         }
     }
 }
