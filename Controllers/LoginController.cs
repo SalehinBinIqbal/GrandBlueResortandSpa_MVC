@@ -8,7 +8,6 @@ namespace GrandBlueResortandSpa.Controllers
 {
     public class LoginController : Controller
     {
-
         // GET: Login\
         GrandBlueEntities grandBlue = new GrandBlueEntities();
         public ActionResult Index()
@@ -27,31 +26,29 @@ namespace GrandBlueResortandSpa.Controllers
             }
         }
         [HttpPost]
-        public ActionResult Index(MEMBER member)
+        public ActionResult Index(MEMBER member, ADMIN admin)
         {
-            //var loggedin = false;
-
             if (Session["email"] == null)
             {
                 ViewBag.Email = "Member already logged in";
                 RedirectToAction("Index", "Home");
             }
-
             var checklogin = grandBlue.MEMBERs.Where(temp => temp.email.Equals(member.email) & temp.password.Equals(member.password)).FirstOrDefault();
+            var checkAdminLogin = grandBlue.ADMINs.Where(temp => temp.email.Equals(admin.email) & temp.password.Equals(admin.password)).FirstOrDefault();
             if (checklogin != null)
             {
                 Session["email"] = checklogin.email;
                 Session["password"] = checklogin.password.ToString();
-                //ViewBag.Login = "login check";
-                TempData["loginFlag"] = "success";
                 return RedirectToAction("Profile");
             }
-
+            else if(checkAdminLogin != null)
+            {
+                Session["email"] = checkAdminLogin.email;
+                return RedirectToAction("Index", "Admin");
+            }
             else
             {
                 TempData["message"] = "Email or Password does not match! Try again.";
-                TempData["loginFlag"] = null;
-                //ViewBag.Notification = "Wrong Email or password";
                 return View();
             }
         }
@@ -70,12 +67,9 @@ namespace GrandBlueResortandSpa.Controllers
             }
             else if (Session["email"] != null)
             {
-                TempData["loginFlag"] = "success";
-
                 string userEmail = Session["email"].ToString();
                 MEMBER member = new MEMBER();
 
-                //List<MEMBER> members = grandBlue.MEMBERs.Where(x => x.email.Equals(userEmail)).ToList();
                 member = grandBlue.MEMBERs.SingleOrDefault(x => x.email.Equals(userEmail));
 
                 if (member != null)
@@ -134,13 +128,7 @@ namespace GrandBlueResortandSpa.Controllers
                     TempData["memberNationality"] = member.nationality;
                     TempData["memberPassword"] = member.password;
                 }
-                //Update in book table
-                //BOOKING book = (BOOKING)grandBlue.BOOKINGs.Where(temp => temp.email.Equals(member.email) && temp.nationalId.Equals(member.nationalId));
-
-                //if (book != null)
-                //{
-                //  book.mobile = phone;
-                //}
+             
 
                 List<BOOKING> booking = grandBlue.BOOKINGs.Where(x => x.nationalId.Equals(member.nationalId)).OrderByDescending(x => x.bookid).Take(1).ToList();
 
@@ -148,8 +136,8 @@ namespace GrandBlueResortandSpa.Controllers
                                                   && temp.nationalId.Equals(member.nationalId)).Count();
                 TempData["memberVisit"] = visitCount;
 
-                TempData["contactUpdate"] = "1";
-                //return View(booking);
+
+   
                 return RedirectToAction("Profile");
 
 
@@ -178,28 +166,23 @@ namespace GrandBlueResortandSpa.Controllers
 
                         member.password = newpass;
                         grandBlue.SaveChanges();
-                        TempData["passwordUpdated"] = "1";
                     }
 
                     return RedirectToAction("Profile");
-                    //return Content("Successful");
+
 
                 }
                 else
                 {
                     ViewBag.msg = "Password does not match";
-                    TempData["missMatch"] = "Password Missmatch";
-                    return RedirectToAction("Profile");
-                    //return Content("Password does not match");
+                    return Content("Password does not match");
                 }
 
             }
             else
             {
-                TempData["ResetPassFlag"] = "Incorrect Password";
                 ViewBag.msg = "Incorrect Password";
-                return RedirectToAction("Profile");
-                //return Content("Incorrect Password");
+                return Content("Incorrect Password");
             }
         }
 
