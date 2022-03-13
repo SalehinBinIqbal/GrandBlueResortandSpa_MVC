@@ -224,6 +224,24 @@
                             </div>
 
                         </form>
+                        @if (TempData["ResetPassFlag"] != null)
+                        {
+                            <!--<p class="txt" style="color: red;  margin-top:1%;"></p>-->
+                            <script>alert('Incorrect Password.')</script>
+                        }
+                        @if (TempData["missMatch"] != null)
+                        {
+                            <script>alert('Password Missmatch.')</script>
+                            <!--<p class="txt" style="color: red;  margin-top:1%;"></p>-->
+                        }
+                        @if(TempData["passwordUpdated"] != null)
+                        {
+                            <script>alert('Password Updated Successfully.')</script>
+                        }
+                        @if(TempData["contactUpdate"] != null)
+                        {
+                            <script>alert('Contact Updated.')</script>
+                        }
                     </div>
                 </div>
             </div>

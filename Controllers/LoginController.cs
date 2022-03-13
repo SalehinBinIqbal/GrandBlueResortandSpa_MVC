@@ -8,6 +8,7 @@ namespace GrandBlueResortandSpa.Controllers
 {
     public class LoginController : Controller
     {
+
         // GET: Login\
         GrandBlueEntities grandBlue = new GrandBlueEntities();
         public ActionResult Index()
@@ -35,17 +36,21 @@ namespace GrandBlueResortandSpa.Controllers
                 ViewBag.Email = "Member already logged in";
                 RedirectToAction("Index", "Home");
             }
+
             var checklogin = grandBlue.MEMBERs.Where(temp => temp.email.Equals(member.email) & temp.password.Equals(member.password)).FirstOrDefault();
             if (checklogin != null)
             {
                 Session["email"] = checklogin.email;
                 Session["password"] = checklogin.password.ToString();
                 //ViewBag.Login = "login check";
+                TempData["loginFlag"] = "success";
                 return RedirectToAction("Profile");
             }
+
             else
             {
                 TempData["message"] = "Email or Password does not match! Try again.";
+                TempData["loginFlag"] = null;
                 //ViewBag.Notification = "Wrong Email or password";
                 return View();
             }
@@ -63,6 +68,8 @@ namespace GrandBlueResortandSpa.Controllers
 
             if (Session["email"] != null)
             {
+                TempData["loginFlag"] = "success";
+
                 string userEmail = Session["email"].ToString();
                 MEMBER member = new MEMBER();
 
@@ -139,7 +146,7 @@ namespace GrandBlueResortandSpa.Controllers
                                                   && temp.nationalId.Equals(member.nationalId)).Count();
                 TempData["memberVisit"] = visitCount;
 
-
+                TempData["contactUpdate"] = "1";
                 //return View(booking);
                 return RedirectToAction("Profile");
 
@@ -169,6 +176,7 @@ namespace GrandBlueResortandSpa.Controllers
 
                         member.password = newpass;
                         grandBlue.SaveChanges();
+                        TempData["passwordUpdated"] = "1";
                     }
 
                     return RedirectToAction("Profile");
@@ -178,16 +186,18 @@ namespace GrandBlueResortandSpa.Controllers
                 else
                 {
                     ViewBag.msg = "Password does not match";
-                    //return RedirectToAction("Profile");
-                    return Content("Password does not match");
+                    TempData["missMatch"] = "Password Missmatch";
+                    return RedirectToAction("Profile");
+                    //return Content("Password does not match");
                 }
 
             }
             else
             {
+                TempData["ResetPassFlag"] = "Incorrect Password";
                 ViewBag.msg = "Incorrect Password";
-                //return RedirectToAction("Profile");
-                return Content("Incorrect Password");
+                return RedirectToAction("Profile");
+                //return Content("Incorrect Password");
             }
         }
 
