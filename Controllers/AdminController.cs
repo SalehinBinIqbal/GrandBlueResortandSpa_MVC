@@ -11,11 +11,15 @@ namespace GrandBlueResortandSpa.Controllers
     {
         GrandBlueEntities grandBlue = new GrandBlueEntities();
         // GET: Admin
-        public ActionResult Index()
+        public ActionResult Index(ADMIN admin)
         {
             if (Session["email"] == null)
             {
                 return RedirectToAction("Index", "Login");
+            }
+            else if(Session["email"] != admin.email)
+            {
+                return RedirectToAction("Index", "Reservation");
             }
             else
             {
@@ -25,11 +29,15 @@ namespace GrandBlueResortandSpa.Controllers
    
         }
 
-        public ActionResult Members()
+        public ActionResult Members(ADMIN admin)
         {
             if (Session["email"] == null)
             {
                 return RedirectToAction("Index", "Login");
+            }
+            else if (Session["email"] != admin.email)
+            {
+                return RedirectToAction("Index", "Reservation");
             }
             else
             {
@@ -46,11 +54,15 @@ namespace GrandBlueResortandSpa.Controllers
             return RedirectToAction("Members", "Admin");
         }
 
-        public ActionResult UpdateRooms()
+        public ActionResult UpdateRooms(ADMIN admin)
         {
             if (Session["email"] == null)
             {
                 return RedirectToAction("Index", "Login");
+            }
+            else if (Session["email"] != admin.email)
+            {
+                return RedirectToAction("Index", "Reservation");
             }
             else
             {
