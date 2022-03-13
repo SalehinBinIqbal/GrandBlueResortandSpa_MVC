@@ -51,7 +51,11 @@
                                                         <input name="submitmem" type="submit" value="Login" class="btn btn-success text" />
                                                     </div>
                                                 </form>
-                                            </div>
+                                                @if(TempData["Failed"] != null)
+                                                {
+                                            <p style="color: #c00715; margin-bottom:0; margin-top: 0.5em;">@TempData["Failed"]</p>
+                                                }
+</div>
                                         </div>
                                     </div>
                                     <!-- <hr style="border-color: black; opacity: 1; margin-bottom: 5%;" class="dropdown-divider"> -->
@@ -309,6 +313,7 @@
                                                 </div>
                                             </div>
                                         }
+
                                         <script>
                                             document.getElementById("roomname").value = localStorage.getItem("roomType");
                                             document.getElementById("checkintime").value = localStorage.getItem("checkinTime");
@@ -320,11 +325,13 @@
                                         </div>
 
                                     </form>
+
                                 </div>
                             </div>
                         </div>
-
+                        
                     </div>
+
                 </div>
             </div>
         </div>
