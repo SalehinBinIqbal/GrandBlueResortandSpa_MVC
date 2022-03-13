@@ -1,4 +1,4 @@
-﻿
+﻿@model List<GrandBlueResortandSpa.Models.MEMBER>
 @{
     ViewBag.Title = "Members";
     Layout = null;
@@ -58,7 +58,7 @@
                                     <hr class="dropdown-divider">
                                 </li>
                             </ul>
-                            <a href="">
+                            <a href="/Admin/Logout">
                                 <button id="logoutbtn" name="logout" type="button" class="btn btn-danger navtext">
                                     Logout <i class="fa fa-sign-out"></i>
                                 </button>
@@ -74,50 +74,52 @@
                     Members
                 </h2>
                 <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Gender</th>
-                                <th scope="col">E-mail</th>
-                                <th scope="col">Mobile</th>
-                                <th scope="col">NID/Passport</th>
-                                <th scope="col">DOB</th>
-                                <th scope="col">Nationality</th>
-                                <th scope="col">Remove</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>mdo</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>mdo</td>
-                                <td>Mark</td>
-                                <td><button class="btn btn-danger">Delete</button></td>
-                            </tr>
-                            <tr>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>fat</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>fat</td>
-                                <td>Jacob</td>
-                                <td><button class="btn btn-danger">Delete</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <form action="/" method="post">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Gender</th>
+                                    <th scope="col">E-mail</th>
+                                    <th scope="col">Mobile</th>
+                                    <th scope="col">NID/Passport</th>
+                                    <th scope="col">DOB</th>
+                                    <th scope="col">Nationality</th>
+                                    <th scope="col">Remove</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var members in Model)
+                                {
+                                    <tr>
+                                        <td>@members.name</td>
+                                        <td>@members.gender</td>
+                                        <td>@members.email</td>
+                                        <td>@members.mobile</td>
+                                        <td>@members.nationalId</td>
+                                        <td>@members.dob</td>
+                                        <td>@members.nationality</td>
+                                        <td>
+                                            <a href="/Admin/Delete?email=@members.email">
+                                                <button id="" name="Delete" type="button" class="btn btn-danger navtext">
+                                                    Delete 
+                                                </button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </form>
                 </div>
             </div>
-    </div>
-    <div class="footer">
-        <p id="cpyrttext">
-            © Copyright 2021 GrandBlue Resort & Spa. | All Rights Reserved | Powered by ATR
-        </p>
-    </div>
+        </div>
+        <div class="footer">
+            <p id="cpyrttext">
+                © Copyright 2021 GrandBlue Resort & Spa. | All Rights Reserved | Powered by ATR
+            </p>
+        </div>
     </div>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="~/Scripts/bootstrap.bundle.min.js"></script>

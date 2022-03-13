@@ -26,7 +26,7 @@ namespace GrandBlueResortandSpa.Controllers
             }
         }
         [HttpPost]
-        public ActionResult Index(MEMBER member)
+        public ActionResult Index(MEMBER member, ADMIN admin)
         {
             //var loggedin = false;
 
@@ -36,12 +36,19 @@ namespace GrandBlueResortandSpa.Controllers
                 RedirectToAction("Index", "Home");
             }
             var checklogin = grandBlue.MEMBERs.Where(temp => temp.email.Equals(member.email) & temp.password.Equals(member.password)).FirstOrDefault();
+            var checkAdminLogin = grandBlue.ADMINs.Where(temp => temp.email.Equals(admin.email) & temp.password.Equals(admin.password)).FirstOrDefault();
             if (checklogin != null)
             {
                 Session["email"] = checklogin.email;
                 Session["password"] = checklogin.password.ToString();
                 //ViewBag.Login = "login check";
                 return RedirectToAction("Profile");
+            }
+            else if(checkAdminLogin != null)
+            {
+                Session["email"] = checkAdminLogin.email;
+                //ViewBag.Login = "login check";
+                return RedirectToAction("Index", "Admin");
             }
             else
             {

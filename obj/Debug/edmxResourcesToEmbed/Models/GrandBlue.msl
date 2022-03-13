@@ -1,6 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="GrandBlueModelStoreContainer" CdmEntityContainer="GrandBlueEntities">
+    <EntitySetMapping Name="ADMINs">
+      <EntityTypeMapping TypeName="GrandBlueModel.ADMIN">
+        <MappingFragment StoreEntitySet="ADMIN">
+          <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="BOOKINGs">
       <EntityTypeMapping TypeName="GrandBlueModel.BOOKING">
         <MappingFragment StoreEntitySet="BOOKING">

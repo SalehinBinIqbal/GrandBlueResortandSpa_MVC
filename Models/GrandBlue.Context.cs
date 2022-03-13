@@ -25,6 +25,7 @@ namespace GrandBlueResortandSpa.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<ADMIN> ADMINs { get; set; }
         public virtual DbSet<BOOKING> BOOKINGs { get; set; }
         public virtual DbSet<CONTACT> CONTACTs { get; set; }
         public virtual DbSet<MEMBER> MEMBERs { get; set; }
