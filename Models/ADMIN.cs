@@ -12,18 +12,10 @@ namespace GrandBlueResortandSpa.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class BOOKING
+    public partial class ADMIN
     {
-        public int bookid { get; set; }
-        public string name { get; set; }
-        public string gender { get; set; }
+        public int AdminId { get; set; }
         public string email { get; set; }
-        public string mobile { get; set; }
-        public string nationalId { get; set; }
-        public string dob { get; set; }
-        public string nationality { get; set; }
-        public string selectedroom { get; set; }
-        public string checkin { get; set; }
-        public string checkout { get; set; }
+        public string password { get; set; }
     }
 }
