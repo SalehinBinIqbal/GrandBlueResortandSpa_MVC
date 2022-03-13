@@ -25,5 +25,8 @@ namespace GrandBlueResortandSpa.Models
         public string selectedroom { get; set; }
         public string checkin { get; set; }
         public string checkout { get; set; }
+
+        public System.Collections.Generic.IEnumerable<System.Data.Entity.Validation.DbEntityValidationResult> EntityValidationErrors { get; }
     }
+
 }
